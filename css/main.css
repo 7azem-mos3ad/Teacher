@@ -1,0 +1,297 @@
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: solid 1px #ddd;
+  border-collapse: collapse;
+  padding: 2px 3px;
+  text-align: center;
+}
+
+input[type=button] {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+}
+
+input[type=text],
+select {
+  text-align: center;
+  border: solid 1px #ccc;
+  width: auto;
+  padding: 2px 3px;
+}
+
+body {
+  box-sizing: border-box;
+  height: 5000px;
+  font-family: "Tajawal", "Times New Roman", Times, serif;
+  background-color: #f7f6f4;
+}
+body .students-menu-show {
+  position: fixed;
+  left: 697px;
+  top: 120px;
+  display: none;
+  background: #ffffff;
+  /* sec */
+  box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+body aside {
+  position: fixed !important;
+  width: 200px;
+  height: 200px;
+  margin-right: 1.8rem;
+  margin-top: 0.8rem;
+  display: inline-block;
+  height: 1045px;
+  background: #ffffff;
+  /* main shadow */
+  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+body aside .logo {
+  color: #242424;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  line-height: 2;
+}
+body aside .main-pages ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body aside .main-pages ul li {
+  padding: 0.5rem;
+  color: #65676d;
+}
+body aside .main-pages ul li.active {
+  background: rgba(253, 123, 56, 0.2);
+  color: #fd7b38;
+}
+body header {
+  position: fixed !important;
+  top: 0.8rem;
+  left: 3rem;
+  height: 3rem;
+  background: #ffffff;
+  /* main shadow */
+  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 5;
+}
+body header .header-search input {
+  background: #f8f8f8;
+  border-radius: 5px;
+  border: none;
+  position: absolute;
+  top: 0.5rem;
+  height: 2rem;
+  width: 17rem;
+}
+body header .header-search input:focus {
+  outline: #fd7b38;
+  border: 1px solid #fd7b38;
+}
+body header .header-search input::placeholder {
+  position: absolute;
+  color: #242424;
+  opacity: 1;
+  padding-right: 2rem;
+}
+body header .header-search .fa-search {
+  color: #242424;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 2;
+}
+body header .admin-photo {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  left: 4rem;
+  top: 0.5rem;
+  border-radius: 50%;
+  background: url(../images/41688312_2237125146316321_1931414181324521472_o.jpg);
+  background-size: cover;
+  /* main */
+  z-index: 5;
+  border: 1px solid #fd7b38;
+}
+body header .admin-login-settings {
+  position: absolute;
+  left: 2rem;
+  top: 0.5rem;
+}
+body header .admin-login-settings .fa-ellipsis-v {
+  color: #242424;
+  margin-top: 0.3rem;
+  font-size: 1.3rem;
+}
+body section .buttons {
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+}
+body section .buttons button:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  border-radius: 5px;
+  right: 0rem;
+  top: 0rem;
+  background-color: #fd7b38;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+}
+body section .buttons button:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  border-radius: 5px;
+  right: 10rem;
+  top: 0rem;
+  background-color: #fd7b38;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+}
+body section .buttons button:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  border-radius: 5px;
+  left: 1rem;
+  top: 0rem;
+  background-color: #fd7b38;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+}
+body article .layers {
+  position: absolute;
+  width: 100%;
+  left: -20.5rem;
+  top: 9rem;
+}
+body article .layers .now-lesson {
+  background-color: #fff;
+  height: 18rem;
+  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+}
+body article .layers .now-lesson h4 {
+  padding: 1rem;
+}
+body article .layers .now-lesson .group-element-now {
+  position: absolute;
+  background-color: rgba(253, 123, 56, 0.2);
+  border-radius: 5px;
+  right: 2rem;
+  top: 5rem;
+  padding: 0.5rem 1.5rem;
+}
+body article .layers .now-lesson .students-menu {
+  position: absolute;
+  right: 15rem;
+  top: 10rem;
+}
+body article .layers .now-lesson .attendance-menu {
+  position: absolute;
+  right: 25rem;
+  top: 10rem;
+}
+body article .layers .now-lesson .make-exam {
+  position: absolute;
+  right: 40rem;
+  top: 5rem;
+  font-size: 1.3rem;
+}
+body article .layers .now-lesson .make-exam .fa-sticky-note {
+  font-size: 7rem;
+  color: #fd7b38;
+}
+body article .layers .now-lesson .make-vote {
+  position: absolute;
+  right: 50rem;
+  top: 5rem;
+  font-size: 1.3rem;
+}
+body article .layers .now-lesson .make-vote .fa-poll {
+  font-size: 7rem;
+  color: #fd7b38;
+}
+body article .layers .now-lesson .share-file {
+  position: absolute;
+  right: 60rem;
+  top: 5rem;
+  font-size: 1.3rem;
+}
+body article .layers .now-lesson .share-file .fa-file-medical {
+  font-size: 7rem;
+  color: #fd7b38;
+}
+body article .layers .today-lessons {
+  background-color: #fff;
+  height: 18rem;
+  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  margin-top: 1rem;
+}
+body article .layers .today-lessons h4 {
+  padding: 1rem;
+}
+body article .layers .today-lessons .group-element-now {
+  position: absolute;
+  background-color: rgba(253, 123, 56, 0.2);
+  border-radius: 5px;
+  right: 2rem;
+  top: 5rem;
+  padding: 0.5rem 1.5rem;
+}
+body article .layers .today-lessons .group-element {
+  position: absolute;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  right: 15rem;
+  top: 5rem;
+  padding: 0.5rem 1.5rem;
+}
+body article .layers .today-lessons div:nth-child(3) {
+  right: 28rem;
+}
+body article .layers .today-lessons div:nth-child(4) {
+  right: 41rem;
+}
+body article .layers .today-lessons div:nth-child(5) {
+  right: 54rem;
+}
+body article .layers .late-pays {
+  background-color: #fff;
+  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  margin-top: 1rem;
+}
+body article .layers .late-pays h4 {
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher System</title>
+    <link
+      rel="stylesheet"
+      href="css/bootstrap-rtl.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
+    <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <aside class="col-md-2">
+      <div class="logo">
+        <p>حازم مسعد</p>
+      </div>
+      <div class="main-pages">
+        <ul>
+          <li class="active">
+            <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
+          </li>
+          <li><i class="fas fa-users mr-1"></i> الطلاب</li>
+          <li><i class="fas fa-layer-group mr-1"></i> المجموعات</li>
+          <li><i class="far fa-calendar-alt mr-1"></i> المواعيد</li>
+          <li><i class="far fa-sticky-note mr-1"></i> الاختبارات</li>
+          <li><i class="fas fa-cog mr-1"></i> الاعدادات</li>
+        </ul>
+      </div>
+    </aside>
+
+    <header class="col-md-9">
+      <div class="row">
+        <div class="header-search col-md-3">
+          <i class="fas fa-search"></i>
+
+          <input
+            type="search"
+            name="header_search"
+            id="headersearch"
+            placeholder="بحث"
+          />
+        </div>
+
+        <div class="col-md-7"></div>
+
+        <div class="col-md-2">
+          <div class="admin-photo"></div>
+          <div class="admin-login-settings">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="col-md-9 buttons">
+        <button>اضافة طالب</button>
+        <button>تسديد مدفوعات</button>
+        <button>تسجيل حضور</button>
+      </div>
+    </section>
+
+    <article class="col-md-9">
+      <div class="layers">
+        <div class="now-lesson">
+          <h4>الحصة الحالية</h4>
+          <div class="group-element-now">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="students-menu" id="studentmenu">
+            <i class="fas fa-users"></i>
+            <p>قائمة الطلاب</p>
+          </div>
+          <div class="attendance-menu">
+            <i class="far fa-arrow-alt-circle-left"></i>
+            <p>قائمة الحضور</p>
+          </div>
+          <div class="make-exam">
+            <i class="far fa-sticky-note"></i>
+            <p>انشاء امتحان</p>
+          </div>
+          <div class="make-vote">
+            <i class="fas fa-poll"></i>
+            <p>انشاء تصويت</p>
+          </div>
+          <div class="share-file">
+            <i class="fas fa-file-medical"></i>
+            <p>مشاركة ملف</p>
+          </div>
+        </div>
+        <div class="today-lessons">
+          <h4>حصص اليوم</h4>
+          <div class="group-element-now">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+        </div>
+        <div class="late-pays">
+          
+            <h4>المدفوعات المتأخرة</h4>
+            <div id="latepaystable" class="late-pay-table"</div>
+          
+        </div>
+      </div>
+    </article>
+
+    <div class="students-menu-show" id="studentsmenushow">
+      <h3>قائمة الطلاب</h3>
+      <table>
+        <tr>
+          <td>
+            حازم مسعد
+          </td>
+          <td>
+            عرض
+          </td>
+          <td>
+            تعديل
+          </td>
+          <td>
+            حذف
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="js/axios.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/crude.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
