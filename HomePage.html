@@ -94,10 +94,85 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body"></div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="studentname">اسم الطالب</label>
+                  <input
+                    type="text"
+                    name="student_name"
+                    class="form-control user-login-input w-100"
+                    id="studentname"
+                    required
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="studentphone">رقم الهاتف</label>
+                  <input
+                    type="number"
+                    name="student_phone"
+                    class="form-control user-login-input w-100"
+                    id="studentphone"
+                    required
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="studentlevel">الصف</label>
+                  <select
+                    class="form-control"
+                    id="studentlevel"
+                    name="student_level"
+                    required
+                  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="studentgroup">المجموعة</label>
+                  <select
+                    class="form-control"
+                    id="studentgroup"
+                    name="student_grou["
+                    required
+                  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="studentaddress">العنوان</label>
+                  <input
+                    type="text"
+                    name="student_address"
+                    class="form-control w-100"
+                    id="studentaddress"
+                    required
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">كلمة السر</label>
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    class="form-control w-100"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+              </div>
               <div class="modal-footer">
                 <button
                   class="ok-button text-center w-100"
+                  type="submit"
                   data-dismiss="modal"
                   aria-label="Close"
                 >
@@ -309,7 +384,7 @@
         <div class="late-pays">
           <h4>المدفوعات المتأخرة</h4>
 
-          <table id="latepaystable" class="display late-pay-table">
+          <table id="latepaystable" class="display late-pay-table w-100">
             <thead>
               <tr>
                 <th>Name</th>

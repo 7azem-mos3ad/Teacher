@@ -66,6 +66,28 @@ button {
   background-color: #EB5757;
 }
 
+input {
+  background-color: #f8f8f8 !important;
+  border: none !important;
+  color: #242424;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none !important;
+  background: url("../../../images/selectarrow.svg") #fd7b38 no-repeat 0 !important;
+  /* Better placement regardless of input width */
+  background-color: #f8f8f8 !important;
+  color: #242424;
+}
+
+label {
+  color: #fd7b38 !important;
+  font-weight: bold !important;
+}
+
 body {
   box-sizing: border-box;
   height: 5000px;

@@ -1,5 +1,6 @@
 @import "./sass/helpers/colors";
 @import "./sass/components/buttons";
+@import './sass/components/input';
 
 body {
   margin: 0;
@@ -35,11 +36,6 @@ body {
       h5 {
         color: $main-color;
         font-weight: bold;
-      }
-      input {
-        background-color: #f8f8f8;
-        border: none;
-        justify-content: right;
       }
     }
   }

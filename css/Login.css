@@ -13,6 +13,28 @@ button {
   background-color: #27AE60;
 }
 
+input {
+  background-color: #f8f8f8 !important;
+  border: none !important;
+  color: #242424;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none !important;
+  background: url("../../../images/selectarrow.svg") #fd7b38 no-repeat 0 !important;
+  /* Better placement regardless of input width */
+  background-color: #f8f8f8 !important;
+  color: #242424;
+}
+
+label {
+  color: #fd7b38 !important;
+  font-weight: bold !important;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -48,11 +70,6 @@ body .form form {
 body .form form h5 {
   color: #fd7b38;
   font-weight: bold;
-}
-body .form form input {
-  background-color: #f8f8f8;
-  border: none;
-  justify-content: right;
 }
 
 /*# sourceMappingURL=Login.css.map */

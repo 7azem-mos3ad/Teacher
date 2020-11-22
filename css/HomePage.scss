@@ -2,6 +2,7 @@
 @import "./sass/helpers/colors";
 @import "./sass/components/buttons";
 @import "./sass/components/deleteModal";
+@import './sass/components/input';
 
 body {
   box-sizing: border-box;
@@ -328,4 +329,6 @@ body {
       }
     }
   }
-}
+} 
+
+
