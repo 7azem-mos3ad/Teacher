@@ -1,0 +1,58 @@
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  left: 1rem;
+  top: 0rem;
+  background-color: #fd7b38;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+}
+
+.ok-button {
+  background-color: #27AE60;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f6f4;
+  height: 100vh;
+  color: #242424;
+  font-family: "Tajawal", "Times New Roman", Times, serif;
+}
+body .form {
+  min-height: 10em;
+  display: table-cell;
+  vertical-align: middle;
+}
+body .form h4 {
+  font-weight: bold;
+  margin-top: 5rem;
+}
+body .form .login-header-information {
+  color: #fd7b38 !important;
+}
+body .form form {
+  background-color: #fff;
+  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  position: absolute;
+  top: 30rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  padding: 5rem;
+  width: 35rem;
+}
+body .form form h5 {
+  color: #fd7b38;
+  font-weight: bold;
+}
+body .form form input {
+  background-color: #f8f8f8;
+  border: none;
+  justify-content: right;
+}
+
+/*# sourceMappingURL=Login.css.map */

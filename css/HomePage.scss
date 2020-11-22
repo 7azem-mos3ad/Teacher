@@ -1,15 +1,17 @@
-@import 'sass/components/crude';
-
-$main-color: #fd7b38;
-$main-typo: #242424;
-$main-background: rgba(253, 123, 56, 0.2);
-$main-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+@import "./sass/components/table";
+@import "./sass/helpers/colors";
+@import "./sass/components/buttons";
+@import "./sass/components/deleteModal";
 
 body {
   box-sizing: border-box;
   height: 5000px;
   font-family: "Tajawal", "Times New Roman", Times, serif;
   background-color: #f7f6f4;
+
+  .hide_column {
+    display: none;
+  }
 
   .students-menu-show {
     position: fixed;
@@ -22,6 +24,7 @@ body {
     box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
+
   aside {
     position: fixed !important;
     width: 200px;
@@ -46,7 +49,6 @@ body {
     }
 
     .main-pages {
-
       ul {
         list-style: none;
         padding: 0;
@@ -61,7 +63,6 @@ body {
           background: $main-background;
           color: $main-color;
         }
-
       }
     }
   }
@@ -204,6 +205,10 @@ body {
         border-radius: 10px;
         position: relative;
 
+        .svg-content {
+          text-align: center;
+        }
+
         h4 {
           padding: 1rem;
         }
@@ -273,9 +278,11 @@ body {
         border-radius: 10px;
         position: relative;
         margin-top: 1rem;
+
         h4 {
           padding: 1rem;
         }
+
         .group-element-now {
           position: absolute;
           background-color: $main-background;
@@ -284,6 +291,7 @@ body {
           top: 5rem;
           padding: 0.5rem 1.5rem;
         }
+
         .group-element {
           position: absolute;
           background-color: #f8f8f8;
@@ -291,27 +299,32 @@ body {
           right: 15rem;
           top: 5rem;
           padding: 0.5rem 1.5rem;
+          cursor: pointer;
         }
+
         div:nth-child(3) {
           right: 28rem;
         }
+
         div:nth-child(4) {
           right: 41rem;
         }
+
         div:nth-child(5) {
           right: 54rem;
         }
       }
+
       .late-pays {
         background-color: #fff;
         box-shadow: $main-shadow;
         border-radius: 10px;
         position: relative;
         margin-top: 1rem;
+
         h4 {
           padding: 1rem;
         }
-        
       }
     }
   }

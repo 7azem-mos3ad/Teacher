@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+
+    <link rel="stylesheet" href="css/datatablefinal.css" />
+    <link
+      rel="stylesheet"
+      href="css/bootstrap-rtl.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
+    <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
+    <link rel="stylesheet" href="css/HomePage.css" />
+    <link rel="icon" href="images/icon.png" />
+  </head>
+
+  <body>
+    <aside class="col-md-2">
+      <div class="logo">
+        <p>حازم مسعد</p>
+      </div>
+      <div class="main-pages">
+        <ul>
+          <li class="active">
+            <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
+          </li>
+          <li><i class="fas fa-users mr-1"></i> الطلاب</li>
+          <li><i class="fas fa-layer-group mr-1"></i> المجموعات</li>
+          <li><i class="far fa-calendar-alt mr-1"></i> المواعيد</li>
+          <li><i class="far fa-sticky-note mr-1"></i> الاختبارات</li>
+          <li><i class="fas fa-cog mr-1"></i> الاعدادات</li>
+        </ul>
+      </div>
+    </aside>
+
+    <header class="col-md-9">
+      <div class="row">
+        <div class="header-search col-md-3">
+          <i class="fas fa-search"></i>
+
+          <input
+            type="search"
+            name="header_search"
+            id="headersearch"
+            placeholder="بحث"
+          />
+        </div>
+
+        <div class="col-md-7"></div>
+
+        <div class="col-md-2">
+          <div class="admin-photo"></div>
+          <div class="admin-login-settings">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="col-md-9 buttons">
+        <button data-toggle="modal" data-target="#AddStudent">
+          اضافة طالب
+        </button>
+        <button>تسديد مدفوعات</button>
+        <button>تسجيل حضور</button>
+      </div>
+
+      <!-- -------------------- -->
+
+      <section class="all-moadels">
+        <!-- Add Model -->
+        <div
+          class="modal fade"
+          id="AddStudent"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center w-100">بيانات الطالب</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body"></div>
+              <div class="modal-footer">
+                <button
+                  class="ok-button text-center w-100"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  اضافة
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ----- -->
+
+        <!-- Delete Model -->
+        <div
+          class="modal fade delete-modal"
+          id="deletestudent"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center w-100">حذف</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="w-100 text-center">هل تريد حذف الطالب بالفعل</h5>
+                <p class="w-100 text-center">
+                  في حال حذف الطالب لا يمكن التراجع وسوف يتم فقد كل البيانات
+                  الخاصة به
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="float-left w-100 confirm-delete"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  تأكيد
+                </button>
+                <button
+                  class="text-center w-100"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  تراجع
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ------------ -->
+      </section>
+
+      <!-- ------------------- -->
+    </section>
+
+    <article class="col-md-9">
+      <div class="layers">
+        <div class="now-lesson">
+          <h4>الحصة الحالية</h4>
+          <div class="group-element-now">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="students-menu" id="studentmenu">
+            <i class="fas fa-users"></i>
+            <p>قائمة الطلاب</p>
+          </div>
+          <div class="attendance-menu">
+            <i class="far fa-arrow-alt-circle-left"></i>
+            <p>قائمة الحضور</p>
+          </div>
+          <div class="make-exam">
+            <div class="svg-content">
+              <svg
+                width="74"
+                height="90"
+                viewBox="0 0 37 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M36.1412 11.683L24.8443 0.386191C24.5972 0.138955 24.2618 0 23.9121 0H4.84866C2.17512 0 0 2.17512 0 4.84857V40.1513C0 42.8249 2.17512 45 4.84857 45H31.6788C34.3523 45 36.5273 42.8249 36.5273 40.1513V12.6152C36.5273 12.2656 36.3885 11.9303 36.1412 11.683ZM25.2305 4.50114L32.0261 11.2968H27.4424C26.2228 11.2968 25.2305 10.3046 25.2305 9.0849V4.50114ZM31.6788 42.3633H4.84857C3.629 42.3633 2.63672 41.371 2.63672 40.1513V4.84857C2.63672 3.629 3.629 2.63672 4.84857 2.63672H22.5937V9.0849C22.5937 11.7584 24.7688 13.9336 27.4424 13.9336H33.8906V40.1513C33.8906 41.371 32.8984 42.3633 31.6788 42.3633ZM12.6153 19.7695H6.9668C6.23871 19.7695 5.64844 20.3598 5.64844 21.0879V26.7363C5.64844 27.4644 6.23871 28.0547 6.9668 28.0547H12.6153C13.3434 28.0547 13.9336 27.4644 13.9336 26.7363V21.0878C13.9336 20.3597 13.3434 19.7695 12.6153 19.7695ZM11.2969 25.418H8.28516V22.4061H11.2969V25.418ZM6.9668 31.0664H12.6153C13.3434 31.0664 13.9336 31.6567 13.9336 32.3848V38.0333C13.9336 38.7614 13.3434 39.3516 12.6153 39.3516H6.9668C6.23871 39.3516 5.64844 38.7614 5.64844 38.0333V32.3848C5.64844 31.6567 6.23871 31.0664 6.9668 31.0664ZM8.28516 36.7148H11.2969V33.7031H8.28516V36.7148ZM16.9453 21.0879C16.9453 21.8159 17.5356 22.4062 18.2637 22.4062H23.9121C24.6402 22.4062 25.2305 21.8159 25.2305 21.0879C25.2305 20.3598 24.6402 19.7695 23.9121 19.7695H18.2637C17.5356 19.7695 16.9453 20.3597 16.9453 21.0879ZM18.2637 25.418H29.5605C30.2886 25.418 30.8789 26.0082 30.8789 26.7363C30.8789 27.4644 30.2886 28.0547 29.5605 28.0547H18.2637C17.5356 28.0547 16.9453 27.4644 16.9453 26.7363C16.9453 26.0082 17.5356 25.418 18.2637 25.418ZM18.2637 33.7032H23.9121C24.6402 33.7032 25.2305 33.1129 25.2305 32.3848C25.2305 31.6567 24.6402 31.0664 23.9121 31.0664H18.2637C17.5356 31.0664 16.9453 31.6567 16.9453 32.3848C16.9453 33.1129 17.5356 33.7032 18.2637 33.7032ZM18.2637 36.7148H29.5605C30.2886 36.7148 30.8789 37.3051 30.8789 38.0332C30.8789 38.7613 30.2886 39.3515 29.5605 39.3515H18.2637C17.5356 39.3515 16.9453 38.7613 16.9453 38.0332C16.9453 37.3051 17.5356 36.7148 18.2637 36.7148ZM6.9668 9.69724H14.0273C14.7554 9.69724 15.3457 9.10696 15.3457 8.37888C15.3457 7.65079 14.7554 7.06052 14.0273 7.06052H6.9668C6.23871 7.06052 5.64844 7.65079 5.64844 8.37888C5.64844 9.10696 6.23871 9.69724 6.9668 9.69724ZM18.2636 15.3457H6.9668C6.23871 15.3457 5.64844 14.7554 5.64844 14.0273C5.64844 13.2993 6.23871 12.709 6.9668 12.709H18.2636C18.9917 12.709 19.582 13.2993 19.582 14.0273C19.582 14.7554 18.9917 15.3457 18.2636 15.3457Z"
+                  fill="url(#paint0_linear)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear"
+                    x1="-5.85012"
+                    y1="-9.26418"
+                    x2="51.2139"
+                    y2="3.47501"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#FF8008" />
+                    <stop offset="1" stop-color="#FFC837" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p>انشاء امتحان</p>
+          </div>
+          <div class="make-vote">
+            <div class="svg-content">
+              <svg
+                width="104"
+                height="90"
+                viewBox="0 0 97 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M37.9225 7.05783L38.3822 7.51694L38.8415 7.05757L42.2328 3.66633C43.0863 2.81276 44.4704 2.81276 45.324 3.66633C46.1776 4.5199 46.1776 5.90399 45.324 6.75756L41.427 10.6546L41.0706 11.0109L41.327 11.4448C46.4065 20.0436 44.9616 30.903 37.9315 37.9332C29.3779 46.4868 15.6189 46.4866 7.06523 37.9332C-1.48841 29.3795 -1.48841 15.6203 7.06523 7.06665C11.0259 3.10596 16.4884 0.65 22.4983 0.65C28.5036 0.65 33.9626 3.1023 37.9225 7.05783ZM73.8452 18.9491L74.3048 19.4087L74.7644 18.9491L79.7524 13.9611C80.606 13.1075 81.9901 13.1075 82.8436 13.9611C83.6972 14.8146 83.6972 16.1987 82.8436 17.0523L77.8557 22.0403L77.396 22.4999L77.8557 22.9595L82.8436 27.9475C83.6972 28.8011 83.6972 30.1852 82.8436 31.0387C81.9901 31.8923 80.606 31.8923 79.7524 31.0387L74.7644 26.0508L74.3048 25.5911L73.8452 26.0508L68.8572 31.0387C68.0036 31.8923 66.6195 31.8923 65.766 31.0387C64.9124 30.1852 64.9124 28.8011 65.766 27.9475L70.754 22.9595L71.2136 22.4999L70.754 22.0403L65.766 17.0523C64.9124 16.1987 64.9124 14.8146 65.766 13.9611C66.6195 13.1075 68.0036 13.1075 68.8572 13.9611L73.8452 18.9491ZM14.5449 22.4413L14.0852 22.9009L14.5448 22.4413C13.6913 21.5877 13.6913 20.2037 14.5448 19.3501C15.3984 18.4965 16.7825 18.4965 17.6361 19.3501C17.6361 19.3501 17.6361 19.3501 17.6361 19.3501L21.6327 23.3469L22.0923 23.8066L22.552 23.3469L34.8309 11.068L35.2908 10.6081L34.8305 10.1485C27.9832 3.31154 16.9983 3.31587 10.1561 10.1579L10.1561 10.1579C3.31034 17.0036 3.31034 27.996 10.1561 34.8417C17.002 41.6877 27.9942 41.6875 34.8399 34.8417C40.0439 29.6378 41.4874 21.733 38.2834 15.0234L37.8873 14.1939L37.2373 14.8439L23.6379 28.4433C22.7843 29.2969 21.4002 29.2969 20.5466 28.4433L14.5449 22.4413ZM74.3048 0.65C86.3266 0.65 96.1547 10.4781 96.1547 22.4999C96.1547 34.5217 86.3266 44.35 74.3048 44.35C62.283 44.35 52.4549 34.5219 52.4549 22.5001C52.4549 10.4781 62.283 0.65 74.3048 0.65ZM74.3048 5.02224C64.6963 5.02224 56.8271 12.8914 56.8271 22.4999C56.8271 32.1084 64.6963 39.9776 74.3048 39.9776C83.9133 39.9776 91.7825 32.1084 91.7825 22.4999C91.7825 12.8916 83.9133 5.02224 74.3048 5.02224Z"
+                  fill="url(#paint0_linear)"
+                  stroke="white"
+                  stroke-width="1.3"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear"
+                    x1="-15.504"
+                    y1="-9.26418"
+                    x2="102.099"
+                    y2="60.3143"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#FF8008" />
+                    <stop offset="1" stop-color="#FFC837" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p>انشاء تصويت</p>
+          </div>
+          <div class="share-file">
+            <div class="svg-content">
+              <svg
+                width="70"
+                height="90"
+                viewBox="0 0 35 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M34.2524 10.9329L23.7058 0.386279C23.4596 0.14001 23.1236 0 22.7734 0H4.31641C2.13558 0 0.361328 1.77425 0.361328 3.95508V41.0449C0.361328 43.2258 2.13558 45 4.31641 45H30.6836C32.8644 45 34.6387 43.2258 34.6387 41.0449V11.8652C34.6387 11.5058 34.4878 11.1682 34.2524 10.9329ZM24.0918 4.50114L30.1375 10.5469H25.4102C24.6832 10.5469 24.0918 9.95546 24.0918 9.22852V4.50114ZM30.6836 42.3633H4.31641C3.58946 42.3633 2.99805 41.7719 2.99805 41.0449V3.95508C2.99805 3.22813 3.58946 2.63672 4.31641 2.63672H21.4551V9.22852C21.4551 11.4093 23.2293 13.1836 25.4102 13.1836H32.002V41.0449C32.002 41.7719 31.4105 42.3633 30.6836 42.3633ZM25.4102 18.6328H9.58984C8.86176 18.6328 8.27148 19.2231 8.27148 19.9512C8.27148 20.6793 8.86176 21.2695 9.58984 21.2695H25.4102C26.1382 21.2695 26.7285 20.6793 26.7285 19.9512C26.7285 19.2231 26.1382 18.6328 25.4102 18.6328ZM9.58984 23.9062H25.4102C26.1382 23.9062 26.7285 24.4965 26.7285 25.2246C26.7285 25.9527 26.1382 26.543 25.4102 26.543H9.58984C8.86176 26.543 8.27148 25.9527 8.27148 25.2246C8.27148 24.4965 8.86176 23.9062 9.58984 23.9062ZM25.4102 29.1797H9.58984C8.86176 29.1797 8.27148 29.77 8.27148 30.498C8.27148 31.2261 8.86176 31.8164 9.58984 31.8164H25.4102C26.1382 31.8164 26.7285 31.2261 26.7285 30.498C26.7285 29.77 26.1382 29.1797 25.4102 29.1797ZM9.58984 34.4531H20.1367C20.8648 34.4531 21.4551 35.0434 21.4551 35.7715C21.4551 36.4996 20.8648 37.0898 20.1367 37.0898H9.58984C8.86176 37.0898 8.27148 36.4996 8.27148 35.7715C8.27148 35.0434 8.86176 34.4531 9.58984 34.4531Z"
+                  fill="url(#paint0_linear)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear"
+                    x1="-5.12844"
+                    y1="-9.26418"
+                    x2="48.7259"
+                    y2="2.01788"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#FF8008" />
+                    <stop offset="1" stop-color="#FFC837" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p>مشاركة ملف</p>
+          </div>
+        </div>
+        <div class="today-lessons">
+          <h4>حصص اليوم</h4>
+          <div class="group-element-now">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div class="group-element">
+            <p>2:00</p>
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+        </div>
+
+        <div class="late-pays">
+          <h4>المدفوعات المتأخرة</h4>
+
+          <table id="latepaystable" class="display late-pay-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>id</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>
+                  <button
+                    class="delete-button"
+                    data-toggle="modal"
+                    data-target="#deletestudent"
+                  >
+                    حذف الطالب
+                  </button>
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>hhhhh Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>
+                  <button
+                    class="delete-button"
+                    data-toggle="modal"
+                    data-target="#deletestudent"
+                  >
+                    حذف الطالب
+                  </button>
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>eeeeee Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>
+                  <button
+                    class="delete-button"
+                    data-toggle="modal"
+                    data-target="#deletestudent"
+                  >
+                    حذف الطالب
+                  </button>
+                </td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <script src="js/axios.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/dataTables.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.flash.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/buttons.print.min.js"></script>
+    <script src="js/buttons.colVis.min.js"></script>
+    <script src="js/HomePage.js"></script>
+  </body>
+</html>

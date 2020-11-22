@@ -1,0 +1,49 @@
+@import "../helpers/colors";
+
+.late-pay-table{
+  border: none;
+  padding-bottom: 10px;
+}
+.dataTables_wrapper {
+  padding: 10px !important;
+  color: $main-typo;
+  .dt-buttons {
+    padding-left: 15px !important;
+    padding-bottom: 15px;
+
+    .dt-button {
+      color: $main-color;
+    }
+  }
+
+  .dataTables_filter,
+  .dataTables_filter input {
+    color: $main-color !important;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: $main-color !important;
+  }
+
+  .dataTables_info {
+    color: $main-color !important;
+  }
+
+  th {
+    color: $main-typo;
+  }
+
+  .sorting_desc,
+  .sorting,
+  .sorting_asc {
+    border-top: 1px solid #ddd;
+    color: $main-typo;
+    border-bottom: 1px solid #ddd;
+    background-color: $main-background;
+  }
+  .dataTables_length {
+    text-align: center;
+  }
+}
