@@ -252,7 +252,7 @@ body section .buttons button:nth-child(3) {
 body article .layers {
   position: absolute;
   width: 100%;
-  left: -20.5rem;
+  left: -29%;
   top: 9rem;
 }
 body article .layers .now-lesson {
@@ -327,14 +327,6 @@ body article .layers .today-lessons {
 body article .layers .today-lessons h4 {
   padding: 1rem;
 }
-body article .layers .today-lessons .group-element-now {
-  position: absolute;
-  background-color: rgba(253, 123, 56, 0.2);
-  border-radius: 5px;
-  right: 2rem;
-  top: 5rem;
-  padding: 0.5rem 1.5rem;
-}
 body article .layers .today-lessons .group-element {
   position: absolute;
   background-color: #f8f8f8;
@@ -344,6 +336,10 @@ body article .layers .today-lessons .group-element {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
 }
+body article .layers .today-lessons div:nth-child(2) {
+  right: 2rem;
+  top: 5rem;
+}
 body article .layers .today-lessons div:nth-child(3) {
   right: 28rem;
 }
@@ -352,6 +348,10 @@ body article .layers .today-lessons div:nth-child(4) {
 }
 body article .layers .today-lessons div:nth-child(5) {
   right: 54rem;
+}
+body article .layers .today-lessons .group-element-select {
+  position: absolute;
+  background-color: rgba(253, 123, 56, 0.2);
 }
 body article .layers .late-pays {
   background-color: #fff;

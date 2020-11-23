@@ -1,9 +1,16 @@
-document.addEventListener('load', function() {
-  console.log('loading...');
-})
-
 $(document).ready(function() {
   
+$('.group-element').click(function() {
+
+  // event soon ----------------
+
+
+  
+  // ---------------------------
+  $('.group-element').removeClass('group-element-select');
+  $(this).addClass('group-element-select');
+})
+
 
   var table = $('#latepaystable').DataTable({
     dom: "B<'row'<'col-sm-12 col-md-6'f><'ml-3'l>>rtip",

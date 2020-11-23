@@ -1,0 +1,70 @@
+header {
+  position: fixed !important;
+  top: 0.8rem;
+  left: 3rem;
+  height: 3rem;
+  background: #ffffff;
+  /* main shadow */
+  box-shadow: $main-shadow;
+  border-radius: 10px;
+  z-index: 5;
+
+  .header-search {
+    input {
+      background: #f8f8f8;
+      border-radius: 5px;
+      border: none;
+      position: absolute;
+      top: 0.5rem;
+      height: 2rem;
+      width: 17rem;
+    }
+
+    input:focus {
+      outline: $main-color;
+      border: 1px solid $main-color;
+    }
+
+    input::placeholder {
+      position: absolute;
+      color: $main-typo;
+      opacity: 1;
+      padding-right: 2rem;
+    }
+
+    .fa-search {
+      color: $main-typo;
+      transform: rotate(90deg);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      z-index: 2;
+    }
+  }
+
+  .admin-photo {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    left: 4rem;
+    top: 0.5rem;
+    border-radius: 50%;
+    background: url(../images/41688312_2237125146316321_1931414181324521472_o.jpg);
+    background-size: cover;
+    /* main */
+    z-index: 5;
+    border: 1px solid $main-color;
+  }
+
+  .admin-login-settings {
+    position: absolute;
+    left: 2rem;
+    top: 0.5rem;
+
+    .fa-ellipsis-v {
+      color: $main-typo;
+      margin-top: 0.3rem;
+      font-size: 1.3rem;
+    }
+  }
+}

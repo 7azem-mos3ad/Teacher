@@ -3,7 +3,6 @@
 @import "./sass/components/buttons";
 @import "./sass/components/deleteModal";
 @import './sass/components/input';
-
 body {
   box-sizing: border-box;
   height: 5000px;
@@ -196,7 +195,7 @@ body {
     .layers {
       position: absolute;
       width: 100%;
-      left: -20.5rem;
+      left: -29%;
       top: 9rem;
 
       .now-lesson {
@@ -284,15 +283,7 @@ body {
           padding: 1rem;
         }
 
-        .group-element-now {
-          position: absolute;
-          background-color: $main-background;
-          border-radius: 5px;
-          right: 2rem;
-          top: 5rem;
-          padding: 0.5rem 1.5rem;
-        }
-
+        
         .group-element {
           position: absolute;
           background-color: #f8f8f8;
@@ -302,7 +293,10 @@ body {
           padding: 0.5rem 1.5rem;
           cursor: pointer;
         }
-
+        div:nth-child(2) {
+          right: 2rem;
+          top: 5rem;
+        }
         div:nth-child(3) {
           right: 28rem;
         }
@@ -314,6 +308,12 @@ body {
         div:nth-child(5) {
           right: 54rem;
         }
+        .group-element-select {
+          position: absolute;
+          background-color: $main-background;
+          
+        }
+
       }
 
       .late-pays {
