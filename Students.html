@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>students</title>
+
+  <link rel="stylesheet" href="css/datatablefinal.css" />
+  <link
+    rel="stylesheet"
+    href="css/bootstrap-rtl.min.css"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
+  <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
+  <link rel="stylesheet" href="css/Students.css" />
+  <link rel="icon" href="images/icon.png" />
+</head>
+<body>
+  <aside class="col-md-2">
+    <div class="logo">
+      <p>حازم مسعد</p>
+    </div>
+    <div class="main-pages">
+      <ul>
+        <li>
+          <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
+        </li>
+        <li class="active"><i class="fas fa-users mr-1"></i> الطلاب</li>
+        <li><i class="fas fa-layer-group mr-1"></i> المجموعات</li>
+        <li><i class="far fa-calendar-alt mr-1"></i> المواعيد</li>
+        <li><i class="far fa-sticky-note mr-1"></i> الاختبارات</li>
+        <li><i class="fas fa-cog mr-1"></i> الاعدادات</li>
+      </ul>
+    </div>
+  </aside>
+  <header class="col-md-9">
+    <div class="row">
+      <div class="header-search col-md-3">
+        <i class="fas fa-search"></i>
+
+        <input
+          type="search"
+          name="header_search"
+          id="headersearch"
+          placeholder="بحث"
+        />
+      </div>
+
+      <div class="col-md-7"></div>
+
+      <div class="col-md-2">
+        <div class="admin-photo"></div>
+        <div class="admin-login-settings">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="col-md-9 buttons">
+      <button data-toggle="modal" data-target="#AddStudent">
+        اضافة طالب
+      </button>
+      <button data-toggle="modal" data-target="#paymentStudent">تسديد مدفوعات</button>
+      <button data-toggle="modal" data-target="#attendanceStudent">تسجيل حضور</button>
+    </div>
+
+  </section>
+
+  <section class="all-moadels">
+    <!-- Add Model -->
+    <div
+      class="modal fade"
+      id="AddStudent"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center w-100">بيانات الطالب</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
+
+            <div class="form-group">
+              <label for="studentname">اسم الطالب</label>
+              <input
+                type="text"
+                name="student_name"
+                class="form-control user-login-input w-100"
+                id="studentname"
+                required
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="studentphone">رقم الهاتف</label>
+              <input
+                type="number"
+                name="student_phone"
+                class="form-control user-login-input w-100"
+                id="studentphone"
+                required
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="studentlevel">الصف</label>
+              <select
+                class="form-control"
+                id="studentlevel"
+                name="student_level"
+                required
+              >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="studentgroup">المجموعة</label>
+              <select
+                class="form-control"
+                id="studentgroup"
+                name="student_grou["
+                required
+              >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="studentaddress">العنوان</label>
+              <input
+                type="text"
+                name="student_address"
+                class="form-control w-100"
+                id="studentaddress"
+                required
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">كلمة السر</label>
+              <input
+                type="password"
+                name="password"
+                required
+                class="form-control w-100"
+                id="exampleInputPassword1"
+              />
+            </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="ok-button text-center w-100"
+              type="submit"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              اضافة
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----- -->
+    
+    <!-- Payment Modal -->
+
+    <div
+      class="modal fade"
+      id="paymentStudent"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center w-100">تسديد مدفوعات</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              action="{{form}}"
+              method="POST"
+              class="mx-auto w-100 mt-5"
+              autocomplete="off"
+              login-form
+            >
+              <div class="form-group">
+                <label for="studentlevelpaymentmodal">الصف</label>
+                <select
+                  class="form-control"
+                  id="studentlevelpaymentmodal"
+                  name="student_level"
+                  required
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studentgrouppaymentmodal">المجموعة</label>
+                <select
+                  class="form-control"
+                  id="studentgrouppaymentmodal"
+                  name="student_group"
+                  required
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studentphonepaymentmodal">رقم الهاتف</label>
+                <input
+                  type="number"
+                  list="studentphoneoptionpaymentmodal"
+                  id="studentphonepaymentmodal"
+                  name="student_phone"
+                  class="w-100"
+                  autocomplete="off"
+                />
+
+                <datalist id="studentphoneoptionpaymentmodal">
+                  <option value="01002817639"></option>
+                  <option value="01004340804"></option>
+                  <option value="01067803033"></option>
+                  <option value="01006655656"></option>
+                  <option value="01051561232"></option>
+                </datalist>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="ok-button text-center w-100"
+              type="submit"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              تسديد
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+
+    <!-- Attendance Modal -->
+
+    <div
+      class="modal fade"
+      id="attendanceStudent"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center w-100">تسجيل حضور</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              action="{{form}}"
+              method="POST"
+              class="mx-auto w-100 mt-5"
+              autocomplete="off"
+              login-form
+            >
+              <div class="form-group">
+                <label for="studentlevelattendancemodal">الصف</label>
+                <select
+                  class="form-control"
+                  id="studentlevelattendancemodal"
+                  name="student_level"
+                  required
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studentgroupattendancemodal">المجموعة</label>
+                <select
+                  class="form-control"
+                  id="studentgroupattendancemodal"
+                  name="student_group"
+                  required
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studentphoneattendancemodal">رقم الهاتف</label>
+                <input
+                  type="number"
+                  list="studentnumber"
+                  id="studentphoneattendancemodal"
+                  name="student_phone"
+                  class="w-100"
+                  autocomplete="off"
+                />
+
+                <datalist id="studentnumberattendancemodal">
+                  <option value="01002817639"></option>
+                  <option value="01004340804"></option>
+                  <option value="01067803033"></option>
+                  <option value="01006655656"></option>
+                  <option value="01051561232"></option>
+                </datalist>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="ok-button text-center w-100"
+              type="submit"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              تسجيل حضور
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------- -->
+
+
+    <!-- Delete Model -->
+    <div
+      class="modal fade delete-modal"
+      id="deletestudent"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center w-100">حذف</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5 class="w-100 text-center">هل تريد حذف الطالب بالفعل</h5>
+            <p class="w-100 text-center">
+              في حال حذف الطالب لا يمكن التراجع وسوف يتم فقد كل البيانات
+              الخاصة به
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="float-left w-100 confirm-delete"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              تأكيد
+            </button>
+            <button
+              class="text-center w-100"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              تراجع
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------ -->
+
+    <!-- Refuse Modal -->
+
+    <div
+    class="modal fade delete-modal"
+    id="refusestudent"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center w-100">رفض</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="w-100 text-center">هل تريد رفض الطالب بالفعل</h5>
+          <p class="w-100 text-center">
+            في حال رفض الطالب لا يمكن التراجع وسوف يتم فقد كل البيانات
+            الخاصة به
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="float-left w-100 confirm-delete"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            تأكيد
+          </button>
+          <button
+            class="text-center w-100"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            تراجع
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ------------ -->
+        <!-- ............. -->
+
+  </section>
+
+  <article class="col-md-9">
+    <div class="layers">
+      <div class="table-container">
+        <h4>طلبات اضافة معلقة</h4>
+
+        <table id="pendingrequeststable" class="display the-table w-100">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Office</th>
+              <th>Age</th>
+              <th>Start date</th>
+              <th>Salary</th>
+              <th>hfgdg</th>
+              <th>id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td><button class="ok-button">قبول</button></td>
+              <td>
+                <button
+                  class="refuse-button"
+                  data-toggle="modal"
+                  data-target="#refusestudent"
+                >
+                  رفض 
+                </button>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>hhhhh Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td><button class="ok-button">قبول</button></td>
+
+              <td>
+                <button
+                  class="refuse-button"
+                  data-toggle="modal"
+                  data-target="#refusestudent"
+                >
+                  رفض 
+                </button>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>eeeeee Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td><button class="ok-button">قبول</button></td>
+
+              <td>
+                <button
+                  class="refuse-button"
+                  data-toggle="modal"
+                  data-target="#refusestudent"
+                >
+                  رفض 
+                </button>
+              </td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container">
+        <h4>قوائم الطلاب</h4>
+
+        <div class="form-group col-md-2">
+          <label for="studentlevel">الصف</label>
+          <select
+            class="form-control"
+            id="studentlevel"
+            name="student_level"
+            required
+          >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="studentgroup">المجموعة</label>
+          <select
+            class="form-control"
+            id="studentgroup"
+            name="student_grou["
+            required
+          >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <table id="studentmenutable" class="display the-table w-100">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Office</th>
+              <th>Age</th>
+              <th>Start date</th>
+              <th>Salary</th>
+              <th>id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td>
+                <button
+                  class="delete-button"
+                  data-toggle="modal"
+                  data-target="#deletestudent"
+                >
+                  حذف الطالب
+                </button>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>hhhhh Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td>
+                <button
+                  class="delete-button"
+                  data-toggle="modal"
+                  data-target="#deletestudent"
+                >
+                  حذف الطالب
+                </button>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>eeeeee Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td>
+                <button
+                  class="delete-button"
+                  data-toggle="modal"
+                  data-target="#deletestudent"
+                >
+                  حذف الطالب
+                </button>
+              </td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+
+  <script src="js/axios.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/dataTables.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.flash.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/buttons.print.min.js"></script>
+    <script src="js/buttons.colVis.min.js"></script>
+    <script src="js/Students.js"></script>
+</body>
+</html>

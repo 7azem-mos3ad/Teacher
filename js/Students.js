@@ -1,18 +1,5 @@
 $(document).ready(function() {
-  
-$('.group-element').click(function() {
-
-  // event soon ----------------
-
-
-  
-  // ---------------------------
-  $('.group-element').removeClass('group-element-select');
-  $(this).addClass('group-element-select');
-})
-
-
-  $('#latepaystable').DataTable({
+  $('#pendingrequeststable').DataTable({
     dom: "B<'row'<'col-sm-12 col-md-6'f><'ml-3'l>>rtip",
     "lengthMenu": [[5, 10, 15, -1], [5, 10, 15,  "All"]],
     buttons: [
@@ -72,7 +59,7 @@ $('.group-element').click(function() {
       className: "hide_column"
   }]
   });
-  $('#absentrepeattable').DataTable({
+  $('#studentmenutable').DataTable({
     dom: "B<'row'<'col-sm-12 col-md-6'f><'ml-3'l>>rtip",
     "lengthMenu": [[5, 10, 15, -1], [5, 10, 15,  "All"]],
     buttons: [
@@ -132,8 +119,8 @@ $('.group-element').click(function() {
       className: "hide_column"
   }]
   });
-  
-  $('.delete-button').click(function() {
+
+  $('.refuse-button').click(function() {
     selectedRow = $(this).closest('tr');
     idSelectedRow = $(this).closest('tr').find(".hide_column").text();
     // axios({
@@ -152,51 +139,38 @@ $('.group-element').click(function() {
       // $('#deletestudent').hide();
     })
 });
-// ------------------------------
+$('.delete-button').click(function() {
+  selectedRow = $(this).closest('tr');
+  idSelectedRow = $(this).closest('tr').find(".hide_column").text();
+  // axios({
+  //         method: 'get',
+  //         url: '/admin/student/active/' + id,
+  //     }).then(function(response) {
+  //         confDlt.remove();
+  //         delete confDlt;
+  //         delete id;
+  //     })
+  //     .catch(function(error) {});
 
-
-
-
-// ok for model
-/*
-$('#AddNewGroup').click(function() {
-
-
-  name = $('.AddNewGroupname').val();
-  levels_id = $('.newLevel_id').val();
-  level_name = $(".newLevel_id").find(":selected").text();
-  var t = $('#myTable').DataTable();
-
-  const params = new URLSearchParams();
-  params.append('name', String(name));
-  params.append('levels_id', parseInt(levels_id));
-
-  axios({
-          method: 'post',
-          url: '/admin/groups/add',
-          data: params
-      }).then(function(response) {
-          console.log(response.data);
-          t.row.add([
-              name,
-              level_name,
-              '<td><button type="button" class="btn btn-success btnedit" data-toggle="modal" data-target="#exampleModal2">تعديل</button></td>',
-              '<td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">حذف</button></td>',
-              response.data.id
-          ]).draw(false);
-          $('.AddNewGroupname').val('');
-          $("#exampleModal3").modal('hide');
-      })
-      .catch(function(error) {
-          console.log(error);
-      });
+  $('.confirm-delete').click(function() {
+    selectedRow.remove();
+    // $('#deletestudent').hide();
+  })
 });
+$('.ok-button').click(function() {
+  selectedRow = $(this).closest('tr');
+  idSelectedRow = $(this).closest('tr').find(".hide_column").text();
+  // axios({
+  //         method: 'get',
+  //         url: '/admin/student/active/' + id,
+  //     }).then(function(response) {
+  //         confDlt.remove();
+  //         delete confDlt;
+  //         delete id;
+  //     })
+  //     .catch(function(error) {});
 
-*/
+  selectedRow.remove();
 
-
-
-
-// -----------------------------
-} );
-
+});
+});

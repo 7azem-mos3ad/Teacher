@@ -1,0 +1,52 @@
+section {
+  .buttons {
+    position: absolute;
+    top: 5rem;
+    left: 2rem;
+
+    button:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+      position: absolute;
+      border-radius: 5px;
+      right: 0rem;
+      top: 0rem;
+      background-color: #fd7b38;
+      color: #fff;
+      border: none;
+      font-size: 15px;
+    }
+
+    button:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+      position: absolute;
+      border-radius: 5px;
+      right: 10rem;
+      top: 0rem;
+      background-color: #fd7b38;
+      color: #fff;
+      border: none;
+      font-size: 15px;
+    }
+
+    button:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+      position: absolute;
+      border-radius: 5px;
+      left: 1rem;
+      top: 0rem;
+      background-color: #fd7b38;
+      color: #fff;
+      border: none;
+      font-size: 15px;
+    }
+  }
+}
