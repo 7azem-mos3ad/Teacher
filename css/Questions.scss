@@ -8,6 +8,10 @@
 @import "./sass/helpers/font";
 @import "./sass/components/layers";
 
+body {
+  font-family: $main-font;
+  background-color: #f7f6f4;
+
 article {
   .add-question {
     background-color: #fff;
@@ -114,7 +118,7 @@ article {
       }
   }
 }
-
+}
 input {
   width: 35rem;
   margin-left: 1rem;

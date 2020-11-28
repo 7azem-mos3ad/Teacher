@@ -205,61 +205,65 @@ section .buttons button:nth-child(3) {
   top: 9rem;
 }
 
-article .add-question {
+body {
+  font-family: "Tajawal", "Times New Roman", Times, serif;
+  background-color: #f7f6f4;
+}
+body article .add-question {
   background-color: #fff;
   box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
-article .add-question .add-question-header h4 {
+body article .add-question .add-question-header h4 {
   padding: 1rem;
   float: right;
 }
-article .add-question .add-question-header button {
+body article .add-question .add-question-header button {
   float: left;
   padding: 0.5rem 1rem;
   margin: 0.5rem;
 }
-article .add-question h6 {
+body article .add-question h6 {
   margin-right: 1rem;
 }
-article .add-question .add-question-body {
+body article .add-question .add-question-body {
   margin-top: 3rem;
   margin-right: 20%;
   padding-bottom: 5rem;
 }
-article .add-question .add-question-body .question-container .mcq-question {
+body article .add-question .add-question-body .question-container .mcq-question {
   margin-top: 0.5rem;
 }
-article .add-question .add-question-body .question-container .true-false-question {
+body article .add-question .add-question-body .question-container .true-false-question {
   width: 35rem;
 }
-article .add-question .add-question-body .question-container .true-false-question .answer-element {
+body article .add-question .add-question-body .question-container .true-false-question .answer-element {
   border: 1px solid #242424;
   margin: 1rem 0;
   text-align: center;
   background-color: #f7f6f4;
   cursor: pointer;
 }
-article .add-question .add-question-body .question-container .true-false-question .answer-element input[type=radio] {
+body article .add-question .add-question-body .question-container .true-false-question .answer-element input[type=radio] {
   display: none;
 }
-article .add-question .add-question-body .question-container .true-false-question .answer-element label {
+body article .add-question .add-question-body .question-container .true-false-question .answer-element label {
   display: inline-block;
   width: 100%;
   height: 100%;
   padding: 1rem;
   cursor: pointer;
 }
-article .add-question .add-question-body .question-container .true-false-question .selected-answer {
+body article .add-question .add-question-body .question-container .true-false-question .selected-answer {
   background-color: rgba(253, 123, 56, 0.2);
   border: 1px solid #fd7b38;
 }
-article .add-question .add-question-body .question-container .images-question .input-file {
+body article .add-question .add-question-body .question-container .images-question .input-file {
   display: inline-block;
 }
-article .add-question .add-question-body .question-container .images-question img {
+body article .add-question .add-question-body .question-container .images-question img {
   display: inline-block;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -267,7 +271,7 @@ article .add-question .add-question-body .question-container .images-question im
   width: 7rem;
   height: 7rem;
 }
-article .add-question .add-question-body .question-container .images-question .inputfile {
+body article .add-question .add-question-body .question-container .images-question .inputfile {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -275,7 +279,7 @@ article .add-question .add-question-body .question-container .images-question .i
   position: absolute;
   z-index: -1;
 }
-article .add-question .add-question-body .question-container .images-question .inputfile + label {
+body article .add-question .add-question-body .question-container .images-question .inputfile + label {
   font-size: 1.25em;
   color: white;
   width: 7rem;
@@ -285,12 +289,12 @@ article .add-question .add-question-body .question-container .images-question .i
   display: inline-block;
   font-weight: lighter;
 }
-article .add-question .add-question-body .question-container .images-question .inputfile:focus + label,
-article .add-question .add-question-body .question-container .images-question .inputfile + label:hover {
+body article .add-question .add-question-body .question-container .images-question .inputfile:focus + label,
+body article .add-question .add-question-body .question-container .images-question .inputfile + label:hover {
   background-color: #FFF;
   color: #000;
 }
-article .add-question .add-question-body .question-container .images-question .inputfile + label {
+body article .add-question .add-question-body .question-container .images-question .inputfile + label {
   cursor: pointer;
   /* "hand" cursor */
 }
