@@ -63,7 +63,7 @@ aside {
   height: 1045px;
   background: #ffffff;
   /* main shadow */
-  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
   border-radius: 10px;
 }
 aside .logo {
@@ -95,7 +95,7 @@ header {
   height: 3rem;
   background: #ffffff;
   /* main shadow */
-  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
   border-radius: 10px;
   z-index: 5;
 }
@@ -211,7 +211,7 @@ body {
 }
 body article .add-question {
   background-color: #fff;
-  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
