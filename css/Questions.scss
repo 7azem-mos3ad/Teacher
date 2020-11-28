@@ -65,7 +65,19 @@ article {
               border: 1px solid $main-color;
             }
           }
-          .images-answer {
+          .images-question {
+            .input-file {
+              display: inline-block;
+            }
+            img {
+              display: inline-block;
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              padding: 5px;
+              width: 7rem;
+              height: 7rem;
+
+          }
             .inputfile {
               width: 0.1px;
               height: 0.1px;

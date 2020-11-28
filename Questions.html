@@ -70,13 +70,6 @@
       <div class="add-question">
         <div class="add-question-header">
           <h4>اعداد الاسئلة</h4>
-          <button class="ok-button">
-            حفظ
-          </button>
-          <button class="show-button">
-            عرض
-          </button>
-
         </div>
         <div class="clearfix">
 
@@ -87,67 +80,65 @@
         <div class="add-question-body mt-5>
             <form action=" {{form}}" method="POST" class="mx-auto w-100" autocomplete="off" login-form>
           <div class="question-container">
-            <input type="text" name="question">
+            <label for="question_input">السؤال</label><br>
+            <input type="text" name="question" id="question_input"> 
             <select name="exam_type">
-              <option value="mcq_question" selected disabled>اختر نوع السؤال</option>
+              <option selected disabled>اختر نوع السؤال</option>
               <option value="mcq_question">اختيار من متعدد</option>
               <option value="true_fales_question">صح ام خطأ</option>
               <option value="images_question">اختار صورة</option>
             </select>
 
-            <!-- <div class="mcq-question">
+            <div class="mcq-question">
               <input type="text" name="correct_answer[]">
-              <button class="refuse-button">اضافة اجابة</button>
 
               <div class="wrong-answer">
                 <input type="text" name="wrong_answer[]">
-                <button class="refuse-button">اضافة اجابة</button>
               </div>
-            </div> -->
+              <button class="ok-button mt-2" id="more_answers">اضافة اجابة</button>
 
-            <!-- <div class="true-false-question">
+              <button class="refuse-button mt-2" id="delete_answer">حذف اجابة</button>
+            </div>
+
+            <div class="true-false-question">
               <div class="answer-element">
-                <input
-                  type="radio"
-                  name="gender"
-                  value="7amada"
-                  id="7amada"
-                />
+                <input type="radio" name="gender" value="7amada" id="7amada" />
                 <label for="7amada">صح</label>
               </div>
               <div class="answer-element">
                 <input type="radio" name="gender" value="metnak" id="metnak" />
                 <label for="metnak">خطأ</label>
               </div>
-            </div> -->
+            </div>
 
-            <div class="images-answer">
+            <div class="images-question">
 
-              <div class="input-file">
+              <div class="input-file w-50">
                 <input type="file" accept="image/*" id="file" class="inputfile" onchange="loadFile(event)">
                 <label for="file">اختيار صورة</label>
                 <img id="output" />
               </div>
 
-              <div class="input-file">
+              <div class="input-file w-49">
                 <input type="file" accept="image/*" id="file1" class="inputfile" onchange="loadFile1(event)">
                 <label for="file1">اختيار صورة</label>
                 <img id="output1" />
               </div>
 
-              <div class="input-file">
+              <div class="input-file w-50">
                 <input type="file" accept="image/*" id="file2" class="inputfile" onchange="loadFile2(event)">
                 <label for="file2">اختيار صورة</label>
                 <img id="output2" />
               </div>
 
-              <div class="input-file">
+              <div class="input-file w-49">
                 <input type="file" accept="image/*" id="file3" class="inputfile" onchange="loadFile3(event)">
                 <label for="file3">اختيار صورة</label>
                 <img id="output3" />
               </div>
             </div>
-
+<hr>
+            <button class="ok-button">حفظ</button>
           </div>
 
 
