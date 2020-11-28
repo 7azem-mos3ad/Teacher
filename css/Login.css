@@ -6,22 +6,21 @@ button {
   background-color: #fd7b38;
   color: #fff;
   border: none;
-  font-size: 15px;
-}
+  font-size: 15px; }
 
 .ok-button {
-  background-color: #27AE60;
-}
+  background-color: #27AE60; }
 
 .refuse-button {
-  background-color: #EB5757;
-}
+  background-color: #EB5757; }
+
+.show-button {
+  background-color: #2F80ED; }
 
 input {
   background-color: #f8f8f8 !important;
   border: none !important;
-  color: #242424;
-}
+  color: #242424; }
 
 select {
   -webkit-appearance: none;
@@ -31,13 +30,11 @@ select {
   background: url("../../../images/selectarrow.svg") #fd7b38 no-repeat 0 !important;
   /* Better placement regardless of input width */
   background-color: #f8f8f8 !important;
-  color: #242424;
-}
+  color: #242424; }
 
 label {
   color: #fd7b38 !important;
-  font-weight: bold !important;
-}
+  font-weight: bold !important; }
 
 body {
   margin: 0;
@@ -45,35 +42,29 @@ body {
   background-color: #f7f6f4;
   height: 100vh;
   color: #242424;
-  font-family: "Tajawal", "Times New Roman", Times, serif;
-}
-body .form {
-  min-height: 10em;
-  display: table-cell;
-  vertical-align: middle;
-}
-body .form h4 {
-  font-weight: bold;
-  margin-top: 5rem;
-}
-body .form .login-header-information {
-  color: #fd7b38 !important;
-}
-body .form form {
-  background-color: #fff;
-  box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  position: absolute;
-  top: 30rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 5px;
-  padding: 5rem;
-  width: 35rem;
-}
-body .form form h5 {
-  color: #fd7b38;
-  font-weight: bold;
-}
+  font-family: "Tajawal", "Times New Roman", Times, serif; }
+  body .form {
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle; }
+    body .form h4 {
+      font-weight: bold;
+      margin-top: 5rem; }
+    body .form .login-header-information {
+      color: #fd7b38 !important; }
+    body .form form {
+      background-color: #fff;
+      box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.1);
+      margin: 0;
+      position: absolute;
+      top: 30rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 5px;
+      padding: 5rem;
+      width: 35rem; }
+      body .form form h5 {
+        color: #fd7b38;
+        font-weight: bold; }
 
 /*# sourceMappingURL=Login.css.map */
