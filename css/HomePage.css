@@ -53,6 +53,19 @@
   display: none;
 }
 
+.styled-table {
+  overflow: auto;
+}
+.styled-table tr:nth-child(even) {
+  background-color: #f7f6f4;
+}
+.styled-table td {
+  padding: 12px 15px;
+}
+.styled-table td:last-child {
+  display: none;
+}
+
 button {
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -287,11 +300,13 @@ body article .now-lesson .students-menu {
   position: absolute;
   right: 15rem;
   top: 10rem;
+  cursor: pointer;
 }
 body article .now-lesson .attendance-menu {
   position: absolute;
   right: 25rem;
   top: 10rem;
+  cursor: pointer;
 }
 body article .now-lesson .make-exam {
   position: absolute;

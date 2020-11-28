@@ -61,3 +61,17 @@
     display: none;
   }
 }
+.styled-table {
+  overflow: auto;
+  tr:nth-child(even){
+    background-color: #f7f6f4;
+    
+  }
+  td {
+    padding: 12px 15px;
+}
+
+td:last-child{
+display: none;  
+}
+}

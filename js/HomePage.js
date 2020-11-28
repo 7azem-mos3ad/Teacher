@@ -12,6 +12,7 @@ $('.group-element').click(function() {
 })
 
 
+
   $('#latepaystable').DataTable({
     dom: "B<'row'<'col-sm-12 col-md-6'f><'ml-3'l>>rtip",
     "lengthMenu": [[5, 10, 15, -1], [5, 10, 15,  "All"]],
