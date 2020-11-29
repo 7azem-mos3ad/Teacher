@@ -23,13 +23,13 @@
     </div>
     <div class="main-pages">
       <ul>
-        <li>
+        <li  onclick="window.location.href = 'http://127.0.0.1:5501/HomePage.html'">
           <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
         </li>
-        <li><i class="fas fa-users mr-1"></i> الطلاب</li>
-        <li class="active"><i class="fas fa-layer-group mr-1"></i> المجموعات</li>
+        <li onclick="window.location.href = 'http://127.0.0.1:5501/Students.html'"><i class="fas fa-users mr-1"></i> الطلاب</li>
+        <li class="active" onclick="window.location.href = 'http://127.0.0.1:5501/Groups.html'"><i class="fas fa-layer-group mr-1"></i> المجموعات</li>
         <li><i class="far fa-calendar-alt mr-1"></i> المواعيد</li>
-        <li><i class="far fa-sticky-note mr-1"></i> الاختبارات</li>
+        <li onclick="window.location.href = 'http://127.0.0.1:5501/Questions.html'"><i class="far fa-sticky-note mr-1"></i> الاختبارات</li>
         <li><i class="fas fa-cog mr-1"></i> الاعدادات</li>
       </ul>
     </div>
@@ -93,17 +93,7 @@
           <div class="modal-body">
             <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
 
-            <div class="form-group">
-              <label for="groupnumber">رقم المجموعة</label>
-              <input
-                type="text"
-                name="student_group"
-                class="form-control user-login-input w-100"
-                id="groupnumber"
-                required
-                aria-describedby="emailHelp"
-              />
-            </div>
+            
             <div class="form-group">
               <label for="studentlevel">الصف</label>
               <select
@@ -119,8 +109,31 @@
                 <option>5</option>
               </select>
             </div>
+            <div class="form-group">
+              <label for="grouptime">الصف</label>
+              <select
+                class="form-control"
+                id="grouptime"
+                name="group_time"
+                required
+              >
+              <option selected disabled>اختر الأيام</option>
+              <option>سبت - اثنين - اربعاء</option>
+                <option>احد - ثلاثاء - خميس</option>
 
-
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="groupnumber">الساعة</label>
+              <input
+                type="time"
+                name="student_group"
+                class="form-control user-login-input w-100 text-center"
+                id="groupnumber"
+                required
+                aria-describedby="emailHelp"
+              />
+            </div>
 
             </form>
           </div>

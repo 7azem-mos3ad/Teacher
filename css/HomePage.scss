@@ -18,7 +18,7 @@ body {
   article {
     .now-lesson {
       background-color: #fff;
-      height: 18rem;
+      height: 14rem;
       box-shadow: $main-shadow;
       border-radius: 10px;
       position: relative;
@@ -43,14 +43,14 @@ body {
       .students-menu {
         position: absolute;
         right: 15rem;
-        top: 10rem;
+        top: 58%;
         cursor: pointer;
       }
 
       .attendance-menu {
         position: absolute;
         right: 25rem;
-        top: 10rem;
+        top: 58%;
         cursor: pointer;
       }
 
@@ -93,7 +93,7 @@ body {
 
     .today-lessons {
       background-color: #fff;
-      height: 18rem;
+      height: 14rem;
       box-shadow: $main-shadow;
       border-radius: 10px;
       position: relative;
