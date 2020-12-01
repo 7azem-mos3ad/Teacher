@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
     <link rel="stylesheet" href="css/Login.css" />
     <link rel="icon" href="images/icon.png" />
+    <script src="js/config.js"></script>
+    <script src="js/axios.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+      unauthorized('login', 'true', '/HomePage.html');
+    </script>
   </head>
 
   <body>
@@ -63,9 +70,10 @@
             المتابعة
           </p>
           <p class="w-100 text-center">من خلال منصة واحدة</p>
-          <form action="{{form}}" method="POST" autocomplete="off" login-form>
+          <div class="form-content">
             <h5 class="w-100 text-center">تسجيل الدخول</h5>
 
+            <div class="error_login_massege"></div>
             <div class="form-group">
               <label for="userlogininput">رقم الهاتف</label>
               <input
@@ -78,27 +86,92 @@
               />
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">كلمة السر</label>
+              <label for="password">كلمة السر</label>
               <input
                 type="password"
                 name="password"
                 required
                 class="form-control user-login-input w-100"
-                id="exampleInputPassword1"
+                id="password"
               />
             </div>
             <div class="button">
               <div class="button-abs">
-                <button type="submit" class="ok-button w-100 text-center">
+                <button
+                  class="ok-button w-100 text-center"
+                  id="loginbutton"
+                  onclick="login();"
+                >
                   دخول
                 </button>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
 
+    <script>
+      function login() {
+        user = document.getElementById("userlogininput").value;
+        password = document.getElementById("password").value;
+        const params = new URLSearchParams();
+        params.append("user", String(user));
+        params.append("password", String(password));
+
+        axios({
+          method: "post",
+          url: baseURL + "/login",
+          data: params,
+        })
+          .then(function (response) {
+            rsp = response.data;
+            if (rsp.msg == "login sucssfully") {
+              localStorage.setItem('login','true');
+              localStorage.setItem('id',rsp.data.id);
+              localStorage.setItem('user',rsp.data.user);
+              localStorage.setItem('role',rsp.data.role);
+              localStorage.setItem('token', rsp.token);
+              window.location.href = '/HomePage.html';
+            } else {
+              $(".error_login_massege")
+                .html(`<div class="alert alert-danger mt-5 text-center" role="alert">
+  خطأ في رقم الهاتف او كلمة السر
+</div>`);
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+console.log(document.cookie);
+     
+
+    </script>
+    
     <script src="js/Login.js"></script>
+    
   </body>
 </html>
+
+<style>
+  .alert-manual {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      animation: content-apear 1s ease-in-out 3s forwards;
+      z-index: 100000000;
+  }
+  
+  @keyframes content-apear {
+      0% {
+          opacity: 1;
+      }
+      100% {
+          opacity: 0;
+      }
+  }
+</style>
+<div role="alert" class="alert-manual uk-card uk-alert-fdgdfg uk-card-body alert alert-fdgdfg">
+  <p>من فضلك أعد تسجيل الدخول</p>
+</div>
