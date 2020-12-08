@@ -8,6 +8,7 @@ aside {
   height: 1045px;
   background: #ffffff;
   /* main shadow */
+  overflow: auto;
 
   box-shadow: $main-shadow;
   border-radius: 10px;
@@ -31,8 +32,11 @@ aside {
         padding: 0.5rem;
         color: #65676d;
         cursor: pointer;
-      }
+        }
+        .collapse {
+          margin-right: 2.5rem !important;
 
+        }
       li.active {
         background: $main-background;
         color: $main-color;

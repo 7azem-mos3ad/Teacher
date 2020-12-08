@@ -71,3 +71,5 @@ var loadFile3 = function (event) {
   };
   reader.readAsDataURL(event.target.files[0]);
 };
+
+CKEDITOR.replace("question_input");

@@ -36,6 +36,8 @@ select {
   /* Better placement regardless of input width */
   background-color: #f8f8f8 !important;
   color: #242424;
+  min-width: 3rem;
+  text-align: right;
 }
 
 label {
