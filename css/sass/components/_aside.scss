@@ -1,0 +1,42 @@
+aside {
+  position: fixed !important;
+  width: 200px;
+  height: 200px;
+  margin-right: 1.8rem;
+  margin-top: 0.8rem;
+  display: inline-block;
+  height: 1045px;
+  background: #ffffff;
+  /* main shadow */
+
+  box-shadow: $main-shadow;
+  border-radius: 10px;
+
+  .logo {
+    color: $main-typo;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 2;
+  }
+
+  .main-pages {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 0.5rem;
+        color: #65676d;
+        cursor: pointer;
+      }
+
+      li.active {
+        background: $main-background;
+        color: $main-color;
+      }
+    }
+  }
+}

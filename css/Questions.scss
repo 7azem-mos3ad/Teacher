@@ -1,0 +1,131 @@
+@import "./sass/helpers/colors";
+@import "./sass/components/buttons";
+@import "./sass/components/deleteModal";
+@import "./sass/components/input";
+@import "./sass/components/aside";
+@import "./sass/components/header";
+@import "./sass/components/sectionButtons";
+@import "./sass/helpers/font";
+@import "./sass/components/layers";
+
+body {
+  font-family: $main-font;
+  background-color: #f7f6f4;
+
+article {
+  .add-question {
+    background-color: #fff;
+      box-shadow: $main-shadow;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+
+      .add-question-header {
+        h4 {
+          padding: 1rem;
+          float: right;
+        }
+        button {
+          float: left;
+          padding: .5rem 1rem;
+          margin: .5rem;
+        }
+      }
+      h6 {
+        margin-right: 1rem;
+      }
+      .add-question-body {
+        margin-top: 3rem;
+        margin-right: 20%;
+        padding-bottom: 5rem;
+        .question-container{
+          .mcq-question {
+            margin-top: .5rem;
+          }
+          .true-false-question {
+            width: 35rem;
+            .answer-element {
+              border: 1px solid $main-typo;
+              margin: 1rem 0;
+              // padding: 1rem;
+              text-align: center;
+              background-color: #f7f6f4;
+              cursor: pointer;
+              input[type=radio] {
+                display: none;
+                }
+              label {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                padding: 1rem;
+                cursor: pointer;
+
+                
+              }
+            }
+            .selected-answer {
+              background-color: $main-background;
+              border: 1px solid $main-color;
+            }
+          }
+          .images-question {
+            .input-file {
+              display: inline-block;
+            }
+            img {
+              display: inline-block;
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              padding: 5px;
+              width: 7rem;
+              height: 7rem;
+
+          }
+            .inputfile {
+              width: 0.1px;
+              height: 0.1px;
+              opacity: 0;
+              overflow: hidden;
+              position: absolute;
+              z-index: -1;
+          }
+
+          .inputfile+label {
+              font-size: 1.25em;
+              color: white;
+              width: 7rem;
+              text-align: center;
+              border-radius: 2px;
+              border: 1px solid #3978b8;
+              display: inline-block;
+              font-weight: lighter;
+          }
+
+          .inputfile:focus+label,
+          .inputfile+label:hover {
+              background-color: #FFF;
+              color: #000;
+          }
+
+          .inputfile+label {
+              cursor: pointer;
+              /* "hand" cursor */
+          }
+          }
+        }
+        
+      }
+  }
+}
+}
+input {
+  width: 35rem;
+  margin-left: 1rem;
+  padding: .5rem 0;
+  margin-top: .2rem;
+}
+select {
+  padding: .2rem;
+  width: 10rem;
+}

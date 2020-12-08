@@ -1,0 +1,136 @@
+@import "./sass/components/table";
+@import "./sass/helpers/colors";
+@import "./sass/components/buttons";
+@import "./sass/components/deleteModal";
+@import "./sass/components/input";
+@import "./sass/components/aside";
+@import "./sass/components/header";
+@import "./sass/components/sectionButtons";
+@import "./sass/helpers/font";
+@import "./sass/components/layers";
+
+body {
+  box-sizing: border-box;
+  height: 5000px;
+  font-family: $main-font;
+  background-color: #f7f6f4;
+
+  article {
+    .now-lesson {
+      background-color: #fff;
+      height: 14rem;
+      box-shadow: $main-shadow;
+      border-radius: 10px;
+      position: relative;
+
+      .svg-content {
+        text-align: center;
+      }
+
+      h4 {
+        padding: 1rem;
+      }
+
+      .group-element-now {
+        position: absolute;
+        background-color: $main-background;
+        border-radius: 5px;
+        right: 2rem;
+        top: 5rem;
+        padding: 0.5rem 1.5rem;
+      }
+
+      .students-menu {
+        position: absolute;
+        right: 15rem;
+        top: 58%;
+        cursor: pointer;
+      }
+
+      .attendance-menu {
+        position: absolute;
+        right: 25rem;
+        top: 58%;
+        cursor: pointer;
+      }
+
+      .make-exam {
+        position: absolute;
+        right: 40rem;
+        top: 5rem;
+        font-size: 1.3rem;
+
+        .fa-sticky-note {
+          font-size: 7rem;
+          color: $main-color;
+        }
+      }
+
+      .make-vote {
+        position: absolute;
+        right: 50rem;
+        top: 5rem;
+        font-size: 1.3rem;
+
+        .fa-poll {
+          font-size: 7rem;
+          color: $main-color;
+        }
+      }
+
+      .share-file {
+        position: absolute;
+        right: 60rem;
+        top: 5rem;
+        font-size: 1.3rem;
+
+        .fa-file-medical {
+          font-size: 7rem;
+          color: $main-color;
+        }
+      }
+    }
+
+    .today-lessons {
+      background-color: #fff;
+      height: 14rem;
+      box-shadow: $main-shadow;
+      border-radius: 10px;
+      position: relative;
+      margin-top: 1rem;
+
+      h4 {
+        padding: 1rem;
+      }
+
+      .group-element {
+        position: absolute;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        right: 15rem;
+        top: 5rem;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+      }
+      div:nth-child(2) {
+        right: 2rem;
+        top: 5rem;
+      }
+      div:nth-child(3) {
+        right: 28rem;
+      }
+
+      div:nth-child(4) {
+        right: 41rem;
+      }
+
+      div:nth-child(5) {
+        right: 54rem;
+      }
+      .group-element-select {
+        position: absolute;
+        background-color: $main-background;
+      }
+    }
+  }
+}

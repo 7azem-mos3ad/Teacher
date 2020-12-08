@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>groups</title>
+
+    <link rel="stylesheet" href="css/datatablefinal.css" />
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
+    <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
+    <link rel="stylesheet" href="css/Groups.css" />
+    <link rel="icon" href="images/icon.png" />
+    <script src="js/core/config.js"></script>
+    <script src="js/core/security.js"></script>
+    <script>
+        authorized('login', 'true', '/Login.html');
+        authorized('role', 'admin', '/Login.html');
+    </script>
+</head>
+
+<body>
+    <aside class="col-md-2">
+        <div class="logo">
+            <p>مساعد المعلم</p>
+        </div>
+        <div class="main-pages">
+            <ul>
+                <li onclick="window.location.href = '/HomePage.html'">
+                    <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
+                </li>
+                <li onclick="window.location.href = '/Students.html'"><i class="fas fa-users mr-1"></i> الطلاب</li>
+                <li class="active" onclick="window.location.href = '/Groups.html'"><i class="fas fa-layer-group mr-1"></i> المجموعات
+                </li>
+                <li><i class="far fa-calendar-alt mr-1"></i> المواعيد</li>
+                <li onclick="window.location.href = '/Questions.html'"><i class="far fa-sticky-note mr-1"></i> الاختبارات</li>
+                <li><i class="fas fa-cog mr-1"></i> الاعدادات</li>
+            </ul>
+        </div>
+    </aside>
+    <header class="col-md-9">
+        <div class="row">
+            <div class="header-search col-md-3">
+                <i class="fas fa-search"></i>
+
+                <input type="search" name="header_search" id="headersearch" placeholder="بحث" />
+            </div>
+
+            <div class="col-md-7"></div>
+
+            <div class="col-md-2">
+                <div class="admin-photo"></div>
+                <div class="admin-login-settings">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="col-md-9 buttons">
+            <button data-toggle="modal" data-target="#addgroup">
+        اضافة مجموعة
+      </button>
+        </div>
+
+    </section>
+
+    <section class="all-moadels">
+        <!-- Add Model -->
+        <div class="modal fade" id="addgroup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100">انشاء مجموعة</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
+
+
+                            <div class="form-group">
+                                <label for="studentlevel">الصف</label>
+                                <select class="form-control" id="studentlevel" name="student_level" required>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="grouptime">الصف</label>
+                                <select class="form-control" id="grouptime" name="group_time" required>
+                  <option selected disabled>اختر الأيام</option>
+                  <option>سبت - اثنين - اربعاء</option>
+                  <option>احد - ثلاثاء - خميس</option>
+
+                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="groupnumber">الساعة</label>
+                                <input type="time" name="student_group" class="form-control user-login-input w-100 text-center" id="groupnumber" required aria-describedby="emailHelp" />
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="ok-button text-center w-100" type="submit" data-dismiss="modal" aria-label="Close">
+              انشاء
+            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ----- -->
+
+
+    </section>
+
+    <article class="col-md-9">
+        <div class="layers">
+            <div class="table-container">
+                <h4>المجموعات</h4>
+
+                <div class="form-group col-md-2">
+                    <label for="studentlevel">الصف</label>
+                    <select class="form-control" id="studentlevel" name="student_level" required>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+                </div>
+                <table id="groupsmenutable" class="display the-table w-100">
+                    <thead>
+                        <tr>
+                            <th>الصف</th>
+                            <th>الايام</th>
+                            <th>الساعة</th>
+                            <th>id</th>
+                            <th>id</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </article>
+
+    <script src="js/assets/axios.js"></script>
+    <script src="js/assets/all.min.js"></script>
+    <script src="js/assets/jquery.js" crossorigin="anonymous"></script>
+    <script src="js/assets/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/assets/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/assets/dataTables.js"></script>
+    <script src="js/assets/jquery.dataTables.min.js"></script>
+    <script src="js/assets/dataTables.buttons.min.js"></script>
+    <script src="js/assets/buttons.flash.min.js"></script>
+    <script src="js/assets/jszip.min.js"></script>
+    <script src="js/assets/pdfmake.min.js"></script>
+    <script src="js/assets/vfs_fonts.js"></script>
+    <script src="js/assets/buttons.html5.min.js"></script>
+    <script src="js/assets/buttons.print.min.js"></script>
+    <script src="js/assets/buttons.colVis.min.js"></script>
+    <script src="js/pages/Groups.js"></script>
+</body>
+
+</html>

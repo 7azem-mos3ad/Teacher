@@ -1,0 +1,17 @@
+.delete-modal {
+  .modal-header {
+    h5 {
+      color: #EB5757;
+    }
+  }
+  .modal-body {
+    p {
+      font-size: 14px;
+    }
+  }
+  .modal-footer {
+    .confirm-delete{
+      background-color: #EB5757;
+    }
+  }
+}

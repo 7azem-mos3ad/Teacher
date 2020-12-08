@@ -1,0 +1,21 @@
+@import '../helpers/colors';
+
+
+input {
+  background-color: #f8f8f8 !important;
+  border: none !important;
+  color: $main-typo;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none !important;
+  background: url("../../../images/selectarrow.svg") $main-color no-repeat 0  !important; /* Better placement regardless of input width */
+  background-color: #f8f8f8 !important;
+  color: $main-typo;
+}
+label {
+  color: $main-color !important;
+  font-weight: bold !important;
+}
