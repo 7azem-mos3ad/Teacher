@@ -1,583 +1,806 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>home</title>
 
     <link rel="stylesheet" href="css/datatablefinal.css" />
-    <link rel="stylesheet" href="css/bootstrap-rtl.min.css" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="css/bootstrap-rtl.min.css"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
     <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
     <link rel="stylesheet" href="css/HomePage.css" />
     <link rel="icon" href="images/icon.png" />
     <script src="js/core/security.js"></script>
     <script>
-        authorized('login', 'true', '/Login.html');
-        authorized('role', 'admin', '/Login.html');
-        //validToken("error on token");
+      authorized("login", "true", "/Login.html");
+      authorized("role", "admin", "/Login.html");
+      //validToken("error on token");
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <aside class="col-md-2">
-        <div class="logo">
-            <p>مساعد المعلم</p>
-        </div>
-        <div class="main-pages">
-            <ul>
-                <li class="active" onclick="window.location.href = '/HomePage.html'">
-                    <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
-                </li>
-                <li onclick="window.location.href = '/Students.html'"><i class="fas fa-users mr-1"></i> الطلاب</li>
-                <li onclick="window.location.href = '/Groups.html'"><i class="fas fa-layer-group mr-1"></i> المجموعات</li>
-                <li><i class="far fa-calendar-alt mr-1"></i> المواعيد</li>
-                <li onclick="window.location.href = '/Questions.html'"><i class="far fa-sticky-note mr-1"></i> الاختبارات</li>
-                <li onclick="window.location.href = '/QuetionDetales.html'"><i class="far fa-sticky-note mr-1"></i>تفاصيل الأسألة</li>
-                <li><i class="fas fa-cog mr-1"></i> الاعدادات</li>
-            </ul>
-        </div>
+      <div class="logo">
+        <p>مساعد المعلم</p>
+      </div>
+      <div class="main-pages">
+        <ul>
+          <li class="active" onclick="window.location.href = '/HomePage.html'">
+            <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
+          </li>
+          <li onclick="window.location.href = '/Students.html'">
+            <i class="fas fa-users mr-1"></i> الطلاب
+          </li>
+          <li onclick="window.location.href = '/Groups.html'">
+            <i class="fas fa-layer-group mr-1"></i> المجموعات
+          </li>
+          <li onclick="window.location.href = '/Questions.html'">
+            <i class="far fa-sticky-note mr-1"></i> بنك الأسألة
+          </li>
+          <li onclick="window.location.href = '/QuetionDetales.html'"><i class="far fa-sticky-note mr-1"></i>الاختبارات</li>
+
+          <li onclick="window.location.href = '/Settings.html'"><i class="fas fa-cog mr-1"></i> الاعدادات</li>
+        </ul>
+      </div>
     </aside>
 
     <header class="col-md-9">
-        <div class="row">
-            <div class="header-search col-md-3">
-                <i class="fas fa-search"></i>
+      <div class="row">
+        <div class="header-search col-md-3">
+          <i class="fas fa-search"></i>
 
-                <input type="search" name="header_search" id="headersearch" placeholder="بحث" />
-            </div>
-
-            <div class="col-md-7"></div>
-
-            <div class="col-md-2">
-                <div class="admin-photo"></div>
-                <div class="admin-login-settings">
-                    <i class="fas fa-ellipsis-v"></i>
-                </div>
-            </div>
+          <input
+            type="search"
+            name="header_search"
+            id="headersearch"
+            placeholder="بحث"
+          />
         </div>
+
+        <div class="col-md-7"></div>
+
+        <div class="col-md-2">
+          <div class="admin-photo"></div>
+          <div class="admin-login-settings">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+      </div>
     </header>
 
     <section>
-        <div class="col-md-9 buttons">
-            <button data-toggle="modal" data-target="#AddStudent">
+      <div class="col-md-9 buttons">
+        <button data-toggle="modal" data-target="#AddStudent">
           اضافة طالب
         </button>
-            <button data-toggle="modal" data-target="#paymentStudent">
+        <button data-toggle="modal" data-target="#paymentStudent">
           تسديد مدفوعات
         </button>
-            <button data-toggle="modal" data-target="#attendanceStudent">
+        <button data-toggle="modal" data-target="#attendanceStudent">
           تسجيل حضور
         </button>
-        </div>
+      </div>
     </section>
 
     <!-- -------------------- -->
 
     <section class="all-moadels">
-        <!-- Add Model -->
-        <div class="modal fade" id="AddStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center w-100">بيانات الطالب</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <!-- Add Model -->
+      <div
+        class="modal fade"
+        id="AddStudent"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center w-100">بيانات الطالب</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
-                            <div class="form-group">
-                                <label for="studentname">اسم الطالب</label>
-                                <input type="text" name="student_name" class="form-control user-login-input w-100" id="studentname" required aria-describedby="emailHelp" />
-                            </div>
-                            <div class="form-group">
-                                <label for="studentphone">رقم الهاتف</label>
-                                <input type="number" name="student_phone" class="form-control user-login-input w-100" id="studentphone" required aria-describedby="emailHelp" />
-                            </div>
-                            <div class="form-group">
-                                <label for="studentlevel">الصف</label>
-                                <select class="form-control" id="studentlevel" name="student_level" required>
+            </div>
+            <div class="modal-body">
+              <form
+                action="{{form}}"
+                method="POST"
+                class="mx-auto w-100 mt-5"
+                autocomplete="off"
+                login-form
+              >
+                <div class="form-group">
+                  <label for="studentname">اسم الطالب</label>
+                  <input
+                    type="text"
+                    name="student_name"
+                    class="form-control user-login-input w-100"
+                    id="studentname"
+                    required
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="studentphone">رقم الهاتف</label>
+                  <input
+                    type="number"
+                    name="student_phone"
+                    class="form-control user-login-input w-100"
+                    id="studentphone"
+                    required
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="studentlevel">الصف</label>
+                  <select
+                    class="form-control"
+                    id="studentlevel"
+                    name="student_level"
+                    required
+                  >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                   </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="studentgroup">المجموعة</label>
-                                <select class="form-control" id="studentgroup" name="student_grou[" required>
+                </div>
+                <div class="form-group">
+                  <label for="studentgroup">المجموعة</label>
+                  <select
+                    class="form-control"
+                    id="studentgroup"
+                    name="student_grou["
+                    required
+                  >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                   </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="studentaddress">العنوان</label>
-                                <input type="text" name="student_address" class="form-control w-100" id="studentaddress" required aria-describedby="emailHelp" />
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">كلمة السر</label>
-                                <input type="password" name="password" required class="form-control w-100" id="exampleInputPassword1" />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="ok-button text-center w-100" type="submit" data-dismiss="modal" aria-label="Close">
+                </div>
+                <div class="form-group">
+                  <label for="studentaddress">العنوان</label>
+                  <input
+                    type="text"
+                    name="student_address"
+                    class="form-control w-100"
+                    id="studentaddress"
+                    required
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">كلمة السر</label>
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    class="form-control w-100"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="ok-button text-center w-100"
+                type="submit"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 اضافة
               </button>
-                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ----- -->
+
+      <!-- Payment Modal -->
+
+      <div class="modal fade" id="paymentStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center w-100">تسديد مدفوعات</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
+                        <div class="form-group">
+                            <label for="studentlevelpaymentmodal">الشهر</label>
+                            <select class="form-control" id="studentlevelpaymentmodal" name="student_level" required>
+                                <option value="1">يناير</option>
+                                <option value="2">فبراير</option>
+                                <option value="3">مارس</option>
+                                <option value="4">ابريل</option>
+                                <option value="5">مايو</option>
+                                <option value="6">يونيو</option>
+                                <option value="7">يوليو</option>
+                                <option value="8">أغسطس</option>
+                                <option value="9">سبتمبر</option>
+                                <option value="10">أكتوبر</option>
+                                <option value="11">نوفمبر</option>
+                                <option value="12">ديسمبر</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>اسم الطالب</label>
+                            <input type="text" class="w-100 student_name" autocomplete="off" disabled/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="ok-button text-center w-100" type="submit" data-dismiss="modal" aria-label="Close">
+                        تسديد
+                    </button>
                 </div>
             </div>
         </div>
-        <!-- ----- -->
+    </div>
 
-        <!-- Payment Modal -->
+    <!-- Edit Payment -->
 
-        <div class="modal fade" id="paymentStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center w-100">تسديد مدفوعات</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="editpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title text-center w-100">تسديد مدفوعات</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
+                      <div class="form-group">
+                          <label for="studentlevelpaymentmodal">الشهر</label>
+                          <select class="form-control" id="studentlevelpaymentmodal" name="student_level" required>
+                              <option value="1">يناير</option>
+                              <option value="2">فبراير</option>
+                              <option value="3">مارس</option>
+                              <option value="4">ابريل</option>
+                              <option value="5">مايو</option>
+                              <option value="6">يونيو</option>
+                              <option value="7">يوليو</option>
+                              <option value="8">أغسطس</option>
+                              <option value="9">سبتمبر</option>
+                              <option value="10">أكتوبر</option>
+                              <option value="11">نوفمبر</option>
+                              <option value="12">ديسمبر</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label>اسم الطالب</label>
+                          <input type="text" class="w-100 student_name" autocomplete="off" disabled/>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="cancelpayment">
+                        <label class="form-check-label" for="cancelpayment">
+                          الغاء الدفع
+                        </label>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button class="edit-button text-center w-100" type="submit" data-dismiss="modal" aria-label="Close">
+                      تعديل
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+    <!-- ------ -->
+      <!-- Attendance Modal -->
+
+      <div
+        class="modal fade"
+        id="attendanceStudent"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center w-100">تسجيل حضور</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
-                            <div class="form-group">
-                                <label for="studentlevelpaymentmodal">الصف</label>
-                                <select class="form-control" id="studentlevelpaymentmodal" name="student_level" required>
+            </div>
+            <div class="modal-body">
+              <form
+                action="{{form}}"
+                method="POST"
+                class="mx-auto w-100 mt-5"
+                autocomplete="off"
+                login-form
+              >
+                <div class="form-group">
+                  <label for="studentlevelattendancemodal">الصف</label>
+                  <select
+                    class="form-control"
+                    id="studentlevelattendancemodal"
+                    name="student_level"
+                    required
+                  >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                   </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="studentgrouppaymentmodal">المجموعة</label>
-                                <select class="form-control" id="studentgrouppaymentmodal" name="student_group" required>
+                </div>
+                <div class="form-group">
+                  <label for="studentgroupattendancemodal">المجموعة</label>
+                  <select
+                    class="form-control"
+                    id="studentgroupattendancemodal"
+                    name="student_group"
+                    required
+                  >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                   </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="studentphonepaymentmodal">رقم الهاتف</label>
-                                <input type="number" list="studentphoneoptionpaymentmodal" id="studentphonepaymentmodal" name="student_phone" class="w-100" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                  <label for="studentphoneattendancemodal">رقم الهاتف</label>
+                  <input
+                    type="number"
+                    list="studentnumber"
+                    id="studentphoneattendancemodal"
+                    name="student_phone"
+                    class="w-100"
+                    autocomplete="off"
+                  />
 
-                                <datalist id="studentphoneoptionpaymentmodal">
+                  <datalist id="studentnumberattendancemodal">
                     <option value="01002817639"></option>
                     <option value="01004340804"></option>
                     <option value="01067803033"></option>
                     <option value="01006655656"></option>
                     <option value="01051561232"></option>
                   </datalist>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="ok-button text-center w-100" type="submit" data-dismiss="modal" aria-label="Close">
-                تسديد
-              </button>
-                    </div>
                 </div>
+              </form>
             </div>
-        </div>
-
-        <!-- Attendance Modal -->
-
-        <div class="modal fade" id="attendanceStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center w-100">تسجيل حضور</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{form}}" method="POST" class="mx-auto w-100 mt-5" autocomplete="off" login-form>
-                            <div class="form-group">
-                                <label for="studentlevelattendancemodal">الصف</label>
-                                <select class="form-control" id="studentlevelattendancemodal" name="student_level" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="studentgroupattendancemodal">المجموعة</label>
-                                <select class="form-control" id="studentgroupattendancemodal" name="student_group" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="studentphoneattendancemodal">رقم الهاتف</label>
-                                <input type="number" list="studentnumber" id="studentphoneattendancemodal" name="student_phone" class="w-100" autocomplete="off" />
-
-                                <datalist id="studentnumberattendancemodal">
-                    <option value="01002817639"></option>
-                    <option value="01004340804"></option>
-                    <option value="01067803033"></option>
-                    <option value="01006655656"></option>
-                    <option value="01051561232"></option>
-                  </datalist>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="ok-button text-center w-100" type="submit" data-dismiss="modal" aria-label="Close">
+            <div class="modal-footer">
+              <button
+                class="ok-button text-center w-100"
+                type="submit"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 تسجيل حضور
               </button>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- ---------------- -->
+      <!-- ---------------- -->
 
-        <!-- ............. -->
-        <!-- Delete Model -->
-        <div class="modal fade delete-modal" id="deletestudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center w-100">حذف</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <!-- ............. -->
+      <!-- Delete Model -->
+      <div
+        class="modal fade delete-modal"
+        id="deletestudent"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center w-100">حذف</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
-                    </div>
-                    <div class="modal-body">
-                        <h5 class="w-100 text-center">هل تريد حذف الطالب بالفعل</h5>
-                        <p class="w-100 text-center">
-                            في حال حذف الطالب لا يمكن التراجع وسوف يتم فقد كل البيانات الخاصة به
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="float-left w-100 confirm-delete" data-dismiss="modal" aria-label="Close">
+            </div>
+            <div class="modal-body">
+              <h5 class="w-100 text-center">هل تريد حذف الطالب بالفعل</h5>
+              <p class="w-100 text-center">
+                في حال حذف الطالب لا يمكن التراجع وسوف يتم فقد كل البيانات
+                الخاصة به
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="float-left w-100 confirm-delete"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 تأكيد
               </button>
-                        <button class="text-center w-100" data-dismiss="modal" aria-label="Close">
+              <button
+                class="text-center w-100"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 تراجع
               </button>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
-        <!-- ------------ -->
+      </div>
+      <!-- ------------ -->
 
-        <!-- Student Show Modal -->
+      <!-- Student Show Modal -->
 
-        <div class="modal fade" id="studentmenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center w-100">قائمة الطلاب</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div
+        class="modal fade"
+        id="studentmenu"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center w-100">قائمة الطلاب</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
-                    </div>
-                    <div class="modal-body">
-                        <table class="styled-table w-100">
-                            <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>hhhhh Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
+            </div>
+            <div class="modal-body">
+              <table class="styled-table w-100">
+                <tbody>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>hhhhh Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
 
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>eeeeee Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>eeeeee Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
 
-                                    <td>1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="text-center w-100" data-dismiss="modal" aria-label="Close">
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="text-center w-100"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 غلق
               </button>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- ------------------ -->
+      <!-- ------------------ -->
 
-        <!-- Attendance Show Menu -->
+      <!-- Attendance Show Menu -->
 
-        <div class="modal fade" id="attendancemenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center w-100">قائمة الحضور</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div
+        class="modal fade"
+        id="attendancemenu"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center w-100">قائمة الحضور</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
-                    </div>
-                    <div class="modal-body">
-                        <table class="styled-table w-100">
-                            <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>hhhhh Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
+            </div>
+            <div class="modal-body">
+              <table class="styled-table w-100">
+                <tbody>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>hhhhh Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
 
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>eeeeee Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>eeeeee Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
 
-                                    <td>1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="text-center w-100" data-dismiss="modal" aria-label="Close">
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="text-center w-100"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 غلق
               </button>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- -------------------- -->
+      <!-- -------------------- -->
     </section>
 
     <!-- ------------------- -->
 
     <article class="col-md-9">
-        <div class="layers">
-            <div class="now-lesson">
-                <h4>الحصة الحالية</h4>
-                <select name="groups">
-                    <option disabled selected>المجموعات</option>
-                    <option value="">fgdhdfh</option>
-                    <option value="">dfhfdj</option>
-                    <option value="">dfjfj</option>
-                    <option value="">djfdj</option>
-                    <option value="">dfjfd</option>
-                </select>
-                <div class="group-element-now">
-                    <p>الصف الثاني الثانوي</p>
-                    <p>مجموعة 4</p>
-                </div>
-                <div class="students-menu" data-toggle="modal" data-target="#studentmenu">
-                    <img src="images/group 1.svg">
-                    <p>قائمة الطلاب</p>
-                </div>
-                <div class="attendance-menu" data-toggle="modal" data-target="#attendancemenu">
-                    <img src="images/Union.svg">
-                    <p>قائمة الحضور</p>
-                </div>
-                <div class="make-exam">
-                    <div class="svg-content">
-                        <svg width="55.5" height="67.5" viewBox="0 0 37 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="layers">
+        <div class="now-lesson">
+          <h4>الحصة الحالية</h4>
+          <select name="groups">
+            <option disabled selected>المجموعات</option>
+            <option value="">fgdhdfh</option>
+            <option value="">dfhfdj</option>
+            <option value="">dfjfj</option>
+            <option value="">djfdj</option>
+            <option value="">dfjfd</option>
+          </select>
+          <div class="group-element-now">
+            <p>الصف الثاني الثانوي</p>
+            <p>مجموعة 4</p>
+          </div>
+          <div
+            class="students-menu"
+            data-toggle="modal"
+            data-target="#studentmenu"
+          >
+            <img src="images/group 1.svg" />
+            <p>قائمة الطلاب</p>
+          </div>
+          <div
+            class="attendance-menu"
+            data-toggle="modal"
+            data-target="#attendancemenu"
+          >
+            <img src="images/Union.svg" />
+            <p>قائمة الحضور</p>
+          </div>
+          <div class="make-exam">
+            <div class="svg-content">
+              <svg
+                width="55.5"
+                height="67.5"
+                viewBox="0 0 37 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -598,12 +821,18 @@
                   </linearGradient>
                 </defs>
               </svg>
-                    </div>
-                    <p class="mt-2">انشاء امتحان</p>
-                </div>
-                <div class="make-vote">
-                    <div class="svg-content">
-                        <svg width="78" height="67.5" viewBox="0 0 97 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            </div>
+            <p class="mt-2">انشاء امتحان</p>
+          </div>
+          <div class="make-vote">
+            <div class="svg-content">
+              <svg
+                width="78"
+                height="67.5"
+                viewBox="0 0 97 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M37.9225 7.05783L38.3822 7.51694L38.8415 7.05757L42.2328 3.66633C43.0863 2.81276 44.4704 2.81276 45.324 3.66633C46.1776 4.5199 46.1776 5.90399 45.324 6.75756L41.427 10.6546L41.0706 11.0109L41.327 11.4448C46.4065 20.0436 44.9616 30.903 37.9315 37.9332C29.3779 46.4868 15.6189 46.4866 7.06523 37.9332C-1.48841 29.3795 -1.48841 15.6203 7.06523 7.06665C11.0259 3.10596 16.4884 0.65 22.4983 0.65C28.5036 0.65 33.9626 3.1023 37.9225 7.05783ZM73.8452 18.9491L74.3048 19.4087L74.7644 18.9491L79.7524 13.9611C80.606 13.1075 81.9901 13.1075 82.8436 13.9611C83.6972 14.8146 83.6972 16.1987 82.8436 17.0523L77.8557 22.0403L77.396 22.4999L77.8557 22.9595L82.8436 27.9475C83.6972 28.8011 83.6972 30.1852 82.8436 31.0387C81.9901 31.8923 80.606 31.8923 79.7524 31.0387L74.7644 26.0508L74.3048 25.5911L73.8452 26.0508L68.8572 31.0387C68.0036 31.8923 66.6195 31.8923 65.766 31.0387C64.9124 30.1852 64.9124 28.8011 65.766 27.9475L70.754 22.9595L71.2136 22.4999L70.754 22.0403L65.766 17.0523C64.9124 16.1987 64.9124 14.8146 65.766 13.9611C66.6195 13.1075 68.0036 13.1075 68.8572 13.9611L73.8452 18.9491ZM14.5449 22.4413L14.0852 22.9009L14.5448 22.4413C13.6913 21.5877 13.6913 20.2037 14.5448 19.3501C15.3984 18.4965 16.7825 18.4965 17.6361 19.3501C17.6361 19.3501 17.6361 19.3501 17.6361 19.3501L21.6327 23.3469L22.0923 23.8066L22.552 23.3469L34.8309 11.068L35.2908 10.6081L34.8305 10.1485C27.9832 3.31154 16.9983 3.31587 10.1561 10.1579L10.1561 10.1579C3.31034 17.0036 3.31034 27.996 10.1561 34.8417C17.002 41.6877 27.9942 41.6875 34.8399 34.8417C40.0439 29.6378 41.4874 21.733 38.2834 15.0234L37.8873 14.1939L37.2373 14.8439L23.6379 28.4433C22.7843 29.2969 21.4002 29.2969 20.5466 28.4433L14.5449 22.4413ZM74.3048 0.65C86.3266 0.65 96.1547 10.4781 96.1547 22.4999C96.1547 34.5217 86.3266 44.35 74.3048 44.35C62.283 44.35 52.4549 34.5219 52.4549 22.5001C52.4549 10.4781 62.283 0.65 74.3048 0.65ZM74.3048 5.02224C64.6963 5.02224 56.8271 12.8914 56.8271 22.4999C56.8271 32.1084 64.6963 39.9776 74.3048 39.9776C83.9133 39.9776 91.7825 32.1084 91.7825 22.4999C91.7825 12.8916 83.9133 5.02224 74.3048 5.02224Z"
                   fill="url(#paint0_linear)"
@@ -624,12 +853,18 @@
                   </linearGradient>
                 </defs>
               </svg>
-                    </div>
-                    <p class="mt-2">انشاء تصويت</p>
-                </div>
-                <div class="share-file">
-                    <div class="svg-content">
-                        <svg width="52.5" height="67.5" viewBox="0 0 35 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            </div>
+            <p class="mt-2">انشاء تصويت</p>
+          </div>
+          <div class="share-file">
+            <div class="svg-content">
+              <svg
+                width="52.5"
+                height="67.5"
+                viewBox="0 0 35 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -650,11 +885,11 @@
                   </linearGradient>
                 </defs>
               </svg>
-                    </div>
-                    <p class="mt-2">مشاركة ملف</p>
-                </div>
             </div>
-            <!--<div class="today-lessons">
+            <p class="mt-2">مشاركة ملف</p>
+          </div>
+        </div>
+        <!--<div class="today-lessons">
                 <h4>حصص اليوم</h4>
                 <div class="group-element group-element-select">
                     <p>الصف الثاني الثانوي</p>
@@ -678,126 +913,137 @@
                 </div>
             </div>-->
 
-            <div class="table-container">
-                <h4>المدفوعات المتأخرة</h4>
+        <div class="table-container">
+          <h4>المدفوعات المتأخرة</h4>
 
-                <table id="latepaystable" class="display the-table w-100">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                            <th>id</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>
-                                <button class="delete-button" data-toggle="modal" data-target="#deletestudent">
-                    حذف الطالب
+          <table id="latepaystable" class="display the-table w-100">
+            <thead>
+              <tr>
+                <th>اسم الطالب</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>تعديل</th>
+                <th>دفع</th>
+                <th>id</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="student_name">حمادة Nixon</span></td>
+                <td>---</td>
+                <td>---</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>
+                  <button
+                    class="edit_button"
+                    data-toggle="modal"
+                    data-target="#editpayment"
+                  >
+                    تعديل
                   </button>
-                            </td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>hhhhh Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>
-                                <button class="delete-button" data-toggle="modal" data-target="#deletestudent">
-                    حذف الطالب
+                </td>
+                <td>
+                  <button
+                    class="ok-button"
+                    data-toggle="modal"
+                    data-target="#paymentStudent"
+                  >
+                    دفع
                   </button>
-                            </td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>eeeeee Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>
-                                <button class="delete-button" data-toggle="modal" data-target="#deletestudent">
-                    حذف الطالب
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td><span class="student_name">حمدون Nixon</span></td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>
+                  <button
+                    class="edit_button"
+                    data-toggle="modal"
+                    data-target="#editpayment"
+                  >
+                    تعديل
                   </button>
-                            </td>
-                            <td>1</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!--
-            <div class="table-container">
-                <h4>الغياب المتكرر</h4>
-
-                <table id="absentrepeattable" class="display the-table w-100">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                            <th>id</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>
-                                <button class="delete-button" data-toggle="modal" data-target="#deletestudent">
-                    حذف الطالب
+                </td>
+                <td>
+                  <button
+                    class="ok-button"
+                    data-toggle="modal"
+                    data-target="#paymentStudent"
+                  >
+                    دفع
                   </button>
-                            </td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>hhhhh Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>
-                                <button class="delete-button" data-toggle="modal" data-target="#deletestudent">
-                    حذف الطالب
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td><span class="student_name">حمدين Nixon</span></td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>دفع</td>
+                <td>
+                  <button
+                    class="edit_button"
+                    data-toggle="modal"
+                    data-target="#editpayment"
+                  >
+                    تعديل
                   </button>
-                            </td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>eeeeee Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>
-                                <button class="delete-button" data-toggle="modal" data-target="#deletestudent">
-                    حذف الطالب
+                </td>
+                <td>
+                  <button
+                    class="ok-button"
+                    data-toggle="modal"
+                    data-target="#paymentStudent"
+                  >
+                    دفع
                   </button>
-                            </td>
-                            <td>1</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            -->
+                </td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </article>
 
     <script src="js/assets/axios.js"></script>
@@ -816,6 +1062,5 @@
     <script src="js/assets/buttons.print.min.js"></script>
     <script src="js/assets/buttons.colVis.min.js"></script>
     <script src="js/pages/HomePage.js"></script>
-</body>
-
+  </body>
 </html>

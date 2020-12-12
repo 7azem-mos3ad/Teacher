@@ -292,117 +292,20 @@ section .buttons button:nth-child(3) {
 
 body {
   box-sizing: border-box;
-  height: 5000px;
   font-family: "Tajawal", "Times New Roman", Times, serif;
   background-color: #f7f6f4;
 }
-body article .now-lesson {
-  background-color: #fff;
-  height: 14rem;
-  box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
-  border-radius: 10px;
-  position: relative;
-}
-body article .now-lesson select {
-  display: inline-block;
-  width: 15rem;
-  margin-right: 5rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-}
-body article .now-lesson .svg-content {
-  text-align: center;
-}
-body article .now-lesson h4 {
-  padding: 1rem;
-  display: inline-block;
-}
-body article .now-lesson .group-element-now {
-  position: absolute;
-  background-color: rgba(253, 123, 56, 0.2);
-  border-radius: 5px;
-  right: 2rem;
-  top: 5rem;
-  padding: 0.5rem 1.5rem;
-}
-body article .now-lesson .students-menu {
-  position: absolute;
-  right: 15rem;
-  top: 58%;
-  cursor: pointer;
-}
-body article .now-lesson .attendance-menu {
-  position: absolute;
-  right: 25rem;
-  top: 58%;
-  cursor: pointer;
-}
-body article .now-lesson .make-exam {
-  position: absolute;
-  right: 40rem;
-  top: 5rem;
-  font-size: 1.3rem;
-}
-body article .now-lesson .make-exam .fa-sticky-note {
-  font-size: 7rem;
-  color: #fd7b38;
-}
-body article .now-lesson .make-vote {
-  position: absolute;
-  right: 50rem;
-  top: 5rem;
-  font-size: 1.3rem;
-}
-body article .now-lesson .make-vote .fa-poll {
-  font-size: 7rem;
-  color: #fd7b38;
-}
-body article .now-lesson .share-file {
-  position: absolute;
-  right: 60rem;
-  top: 5rem;
-  font-size: 1.3rem;
-}
-body article .now-lesson .share-file .fa-file-medical {
-  font-size: 7rem;
-  color: #fd7b38;
-}
-body article .today-lessons {
-  background-color: #fff;
-  height: 14rem;
-  box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
-  border-radius: 10px;
-  position: relative;
-  margin-top: 1rem;
-}
-body article .today-lessons h4 {
-  padding: 1rem;
-}
-body article .today-lessons .group-element {
-  position: absolute;
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  right: 15rem;
-  top: 5rem;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-}
-body article .today-lessons div:nth-child(2) {
-  right: 2rem;
-  top: 5rem;
-}
-body article .today-lessons div:nth-child(3) {
-  right: 28rem;
-}
-body article .today-lessons div:nth-child(4) {
-  right: 41rem;
-}
-body article .today-lessons div:nth-child(5) {
-  right: 54rem;
-}
-body article .today-lessons .group-element-select {
-  position: absolute;
-  background-color: rgba(253, 123, 56, 0.2);
+
+.collapse {
+  margin-right: 2rem;
 }
 
-/*# sourceMappingURL=HomePage.css.map */
+.table-container .form-group {
+  display: inline-block;
+  margin: 0 0 3rem 10rem;
+}
+.table-container select {
+  width: 15rem;
+}
+
+/*# sourceMappingURL=QuetionDetales.css.map */

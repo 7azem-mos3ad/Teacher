@@ -11,9 +11,12 @@ button {
 .ok-button {
   background-color: #27AE60;
 }
-.refuse-button {
+.refuse-button, .delete-button {
   background-color: #EB5757;
 }
 .show-button {
-  background-color: #2F80ED;
+  background-color: #0dcaf0;
+}
+.edit-button, .edit_button {
+  background-color: #3341ffd6;
 }

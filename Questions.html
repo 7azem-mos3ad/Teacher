@@ -2,192 +2,189 @@
 <html dir="rtl" lang="ar">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>questions</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>questions</title>
 
-  <link rel="stylesheet" href="css/datatablefinal.css" />
-  <link rel="stylesheet" href="css/bootstrap-rtl.min.css" crossorigin="anonymous" />
-  <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
-  <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
-  <link rel="stylesheet" href="css/Questions.css" />
-	<link rel="icon" href="images/icon.png" />
-	<script src="js/core/security.js"></script>
+    <link rel="stylesheet" href="css/datatablefinal.css" />
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
+    <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
+    <link rel="stylesheet" href="css/Questions.css" />
+    <link rel="icon" href="images/icon.png" />
+    <script src="js/core/security.js"></script>
 
-	<script src="js/auth.js"></script>
-	
-  <script>
-          authorized('login', 'true', '/Login.html');
-          authorized('role', 'admin', '/Login.html');
+    <script src="js/auth.js"></script>
 
-	</script>
-	 <script src="js/assets/ckeditor/ckeditor.js"></script>
+    <script>
+        authorized('login', 'true', '/Login.html');
+        authorized('role', 'admin', '/Login.html');
+    </script>
+    <script src="js/assets/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
-  <aside class="col-md-2">
-    <div class="logo">
-      <p>حازم مسعد</p>
-    </div>
-    <div class="main-pages">
-      <ul>
-        <li  onclick="window.location.href = '/HomePage.html'">
-          <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
-        </li>
-        <li onclick="window.location.href = '/Students.html'"><i class="fas fa-users mr-1"></i> الطلاب</li>
-        <li onclick="window.location.href = '/Groups.html'"><i class="fas fa-layer-group mr-1"></i> المجموعات</li>
-        <li><i class="far fa-calendar-alt mr-1"></i> المواعيد</li>
-				<li class="active" onclick="window.location.href = '/Questions.html'"><i class="far fa-sticky-note mr-1"></i> بنك الأسألة</li>
-				<li onclick="window.location.href = '/QuetionDetales.html'"><i class="far fa-sticky-note mr-1"></i>تفاصيل الأسألة</li>
-        <li><i class="fas fa-cog mr-1"></i> الاعدادات</li>
-      </ul>
-    </div>
-  </aside>
-
-  <header class="col-md-9">
-    <div class="row">
-      <div class="header-search col-md-3">
-        <i class="fas fa-search"></i>
-
-        <input type="search" name="header_search" id="headersearch" placeholder="بحث" />
-      </div>
-
-      <div class="col-md-7"></div>
-
-      <div class="col-md-2">
-        <div class="admin-photo"></div>
-        <div class="admin-login-settings">
-          <i class="fas fa-ellipsis-v"></i>
+    <aside class="col-md-2">
+        <div class="logo">
+            <p>حازم مسعد</p>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <section>
-    <div class="col-md-9 buttons">
-      <button>
-        انشاء امتحان
-      </button>
-      <button style="display: none;"></button>
-      <button>
-        انشاء تصويت
-      </button>
-    </div>
-  </section>
-
-
-  <article class="col-md-9">
-    <div class="layers">
-      <div class="add-question">
-        <div class="add-question-header">
-					<h4>اعداد الاسئلة</h4>
-					<select>
-						<option selected disabled>الدرس</option>
-						<option>الدرس الأول</option>
-						<option>الدرس الثاني</option>
-						<option>الدرس الثالث</option>
-					</select>
-					
-					<select>
-						<option selected disabled>الوحدة</option>
-						<option>الوحدة الأول</option>
-						<option>الوحدة الثاني</option>
-						<option>الوحدة الثالث</option>
-					</select>
-					<select>
-						<option selected disabled>الصف</option>
-						<option>الصف الأول</option>
-						<option>الصف الثاني</option>
-						<option>الصف الثالث</option>
-					</select>
+        <div class="main-pages">
+            <ul>
+                <li onclick="window.location.href = '/HomePage.html'">
+                    <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
+                </li>
+                <li onclick="window.location.href = '/Students.html'"><i class="fas fa-users mr-1"></i> الطلاب</li>
+                <li onclick="window.location.href = '/Groups.html'"><i class="fas fa-layer-group mr-1"></i> المجموعات
+                </li>
+                <li class="active" onclick="window.location.href = '/Questions.html'"><i
+                        class="far fa-sticky-note mr-1"></i>
+                    بنك الأسألة</li>
+                <li onclick="window.location.href = '/QuetionDetales.html'"><i
+                        class="far fa-sticky-note mr-1"></i>الاختبارات
+                </li>
+                <li onclick="window.location.href = '/Settings.html'"><i class="fas fa-cog mr-1"></i> الاعدادات</li>
+            </ul>
         </div>
-        <div class="clearfix">
+    </aside>
 
-        </div>
-        <hr>
-        <h6>ملحوظة: الاجابات الصحيحة هي الاجابة الأولي</h6>
+    <header class="col-md-9">
+        <div class="row">
+            <div class="header-search col-md-3">
+                <i class="fas fa-search"></i>
 
-        <div class="add-question-body mt-5>
-            <form action=" {{form}}" method="POST" class="mx-auto w-100" autocomplete="off" login-form>
-          <div class="question-container">
-            <label for="question_input">السؤال</label><br>
-            <textarea name="question" id="question_input" rows="10" cols="80">
-						</textarea> 
-            <select name="exam_type">
-              <option selected disabled>اختر نوع السؤال</option>
-              <option value="mcq_question">اختيار من متعدد</option>
-              <option value="true_fales_question">صح ام خطأ</option>
-              <option value="images_question">اختار صورة</option>
-            </select>
-
-            <div class="mcq-question">
-              <input type="text" name="correct_answer[]">
-
-              <div class="wrong-answer">
-                <input type="text" name="wrong_answer[]">
-              </div>
-              <button class="ok-button mt-2" id="more_answers">اضافة اجابة</button>
-
-              <button class="refuse-button mt-2" id="delete_answer">حذف اجابة</button>
+                <input type="search" name="header_search" id="headersearch" placeholder="بحث" />
             </div>
 
-            <div class="true-false-question">
-              <div class="answer-element">
-                <input type="radio" name="gender" value="7amada" id="7amada" />
-                <label for="7amada">صح</label>
-              </div>
-              <div class="answer-element">
-                <input type="radio" name="gender" value="metnak" id="metnak" />
-                <label for="metnak">خطأ</label>
-              </div>
+            <div class="col-md-7"></div>
+
+            <div class="col-md-2">
+                <div class="admin-photo"></div>
+                <div class="admin-login-settings">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
             </div>
-
-            <div class="images-question">
-
-              <div class="input-file w-50">
-                <input type="file" accept="image/*" id="file" class="inputfile" onchange="loadFile(event)">
-                <label for="file">اختيار صورة</label>
-                <img id="output" />
-              </div>
-
-              <div class="input-file w-49">
-                <input type="file" accept="image/*" id="file1" class="inputfile" onchange="loadFile1(event)">
-                <label for="file1">اختيار صورة</label>
-                <img id="output1" />
-              </div>
-
-              <div class="input-file w-50">
-                <input type="file" accept="image/*" id="file2" class="inputfile" onchange="loadFile2(event)">
-                <label for="file2">اختيار صورة</label>
-                <img id="output2" />
-              </div>
-
-              <div class="input-file w-49">
-                <input type="file" accept="image/*" id="file3" class="inputfile" onchange="loadFile3(event)">
-                <label for="file3">اختيار صورة</label>
-                <img id="output3" />
-              </div>
-            </div>
-<hr>
-            <button class="ok-button">حفظ</button>
-          </div>
-
-
-          </form>
-
         </div>
-      </div>
-    </div>
+    </header>
 
-  </article>
 
-  <script src="js/assets/axios.js"></script>
-  <script src="js/assets/all.min.js"></script>
-  <script src="js/assets/jquery.js" crossorigin="anonymous"></script>
-  <script src="js/assets/popper.min.js" crossorigin="anonymous"></script>
-  <script src="js/assets/bootstrap.min.js" crossorigin="anonymous"></script>
 
-  <script src="js/pages/Questions.js"></script>
+
+    <article class="col-md-9">
+        <div class="layers">
+            <div class="add-question">
+                <div class="add-question-header">
+                    <h4>اعداد الاسئلة</h4>
+                    <select>
+                        <option selected disabled>الدرس</option>
+                        <option>الدرس الأول</option>
+                        <option>الدرس الثاني</option>
+                        <option>الدرس الثالث</option>
+                    </select>
+
+                    <select>
+                        <option selected disabled>الوحدة</option>
+                        <option>الوحدة الأول</option>
+                        <option>الوحدة الثاني</option>
+                        <option>الوحدة الثالث</option>
+                    </select>
+                    <select>
+                        <option selected disabled>الصف</option>
+                        <option>الصف الأول</option>
+                        <option>الصف الثاني</option>
+                        <option>الصف الثالث</option>
+                    </select>
+                </div>
+                <div class="clearfix">
+
+                </div>
+                <hr>
+                <h6>ملحوظة: الاجابات الصحيحة هي الاجابة الأولي</h6>
+
+                <div class="add-question-body mt-5">
+                    <form action=" {{form}}" method="POST" class="mx-auto w-100" autocomplete="off" login-form>
+                        <div class="question-container">
+                            <label for="question_input">السؤال</label><br>
+                            <textarea name="question" id="question_input" rows="10" cols="80">
+						</textarea>
+                            <select name="exam_type">
+                                <option selected disabled>اختر نوع السؤال</option>
+                                <option value="mcq_question">اختيار من متعدد</option>
+                                <option value="true_fales_question">صح ام خطأ</option>
+                                <option value="images_question">اختار صورة</option>
+                            </select>
+
+                            <div class="mcq-question">
+                                <input type="text" name="correct_answer[]">
+
+                                <div class="wrong-answer">
+                                    <input type="text" name="wrong_answer[]">
+                                </div>
+                                <button class="ok-button mt-2" id="more_answers">اضافة اجابة</button>
+
+                                <button class="refuse-button mt-2" id="delete_answer">حذف اجابة</button>
+                            </div>
+
+                            <div class="true-false-question">
+                                <div class="answer-element">
+                                    <input type="radio" name="gender" value="7amada" id="7amada" />
+                                    <label for="7amada">صح</label>
+                                </div>
+                                <div class="answer-element">
+                                    <input type="radio" name="gender" value="metnak" id="metnak" />
+                                    <label for="metnak">خطأ</label>
+                                </div>
+                            </div>
+
+                            <div class="images-question">
+
+                                <div class="input-file w-50">
+                                    <input type="file" accept="image/*" id="file" class="inputfile"
+                                        onchange="loadFile(event)">
+                                    <label for="file">اختيار صورة</label>
+                                    <img id="output" />
+                                </div>
+
+                                <div class="input-file w-49">
+                                    <input type="file" accept="image/*" id="file1" class="inputfile"
+                                        onchange="loadFile1(event)">
+                                    <label for="file1">اختيار صورة</label>
+                                    <img id="output1" />
+                                </div>
+
+                                <div class="input-file w-50">
+                                    <input type="file" accept="image/*" id="file2" class="inputfile"
+                                        onchange="loadFile2(event)">
+                                    <label for="file2">اختيار صورة</label>
+                                    <img id="output2" />
+                                </div>
+
+                                <div class="input-file w-49">
+                                    <input type="file" accept="image/*" id="file3" class="inputfile"
+                                        onchange="loadFile3(event)">
+                                    <label for="file3">اختيار صورة</label>
+                                    <img id="output3" />
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="ok-button">حفظ</button>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <script src="js/assets/axios.js"></script>
+    <script src="js/assets/all.min.js"></script>
+    <script src="js/assets/jquery.js" crossorigin="anonymous"></script>
+    <script src="js/assets/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/assets/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <script src="js/pages/Questions.js"></script>
 </body>
 
 </html>

@@ -6,12 +6,15 @@
   border-radius: 10px;
   position: relative;
   margin-top: 1rem;
-select {
-  padding: 2px !important;
-  width: 4rem !important;
-  text-align: center !important;
-  margin: 0 6px  !important;
-}
+  .dataTables_length {
+    select {
+      padding: 2px !important;
+      width: 4rem !important;
+      text-align: center !important;
+      margin: 0 6px  !important;
+    }
+  }
+
   h4 {
     padding: 1rem;
   }

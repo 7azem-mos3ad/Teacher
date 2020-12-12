@@ -5,7 +5,7 @@
   position: relative;
   margin-top: 1rem;
 }
-.table-container select {
+.table-container .dataTables_length select {
   padding: 2px !important;
   width: 4rem !important;
   text-align: center !important;
@@ -87,12 +87,16 @@ button {
   background-color: #27AE60;
 }
 
-.refuse-button {
+.refuse-button, .delete-button {
   background-color: #EB5757;
 }
 
 .show-button {
-  background-color: #2F80ED;
+  background-color: #0dcaf0;
+}
+
+.edit-button, .edit_button {
+  background-color: #3341ffd6;
 }
 
 .delete-modal .modal-header h5 {

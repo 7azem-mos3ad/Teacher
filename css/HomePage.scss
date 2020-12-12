@@ -22,13 +22,20 @@ body {
       box-shadow: $main-shadow;
       border-radius: 10px;
       position: relative;
-
+      select {
+        display: inline-block;
+        width: 15rem;
+        margin-right: 5rem;
+        padding: .5rem;
+        border-radius: .2rem;
+      }
       .svg-content {
         text-align: center;
       }
 
       h4 {
         padding: 1rem;
+        display: inline-block;
       }
 
       .group-element-now {

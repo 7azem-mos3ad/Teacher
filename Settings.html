@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settings</title>
+
+    <link rel="stylesheet" href="css/datatablefinal.css" />
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="fonts/Tajawal-Light.ttf" />
+    <link rel="stylesheet" href="fonts/Tajawal-Bold.ttf" />
+    <link rel="stylesheet" href="css/Settings.css" />
+    <link rel="icon" href="images/icon.png" />
+    <script src="js/core/config.js"></script>
+    <script src="js/core/security.js"></script>
+    <script>
+        authorized('login', 'true', '/Login.html');
+        authorized('role', 'admin', '/Login.html');
+    </script>
+</head>
+
+<body>
+    <aside class="col-md-2">
+        <div class="logo">
+            <p>مساعد المعلم</p>
+        </div>
+        <div class="main-pages">
+            <ul>
+                <li onclick="window.location.href = '/HomePage.html'">
+                    <i class="fas fa-house-user mr-1"></i> الصفحة الرئيسية
+                </li>
+                <li onclick="window.location.href = '/Students.html'"><i class="fas fa-users mr-1"></i> الطلاب</li>
+                <li onclick="window.location.href = '/Groups.html'"><i class="fas fa-layer-group mr-1"></i> المجموعات
+                </li>
+                <li onclick="window.location.href = '/Questions.html'"><i class="far fa-sticky-note mr-1"></i> بنك
+                    الأسألة</li>
+                <li onclick="window.location.href = '/QuetionDetales.html'"><i
+                        class="far fa-sticky-note mr-1"></i>الاختبارات</li>
+                <li class="active" onclick="window.location.href = '/Settings.html'"><i class="fas fa-cog mr-1"></i>
+                    الاعدادات</li>
+            </ul>
+        </div>
+    </aside>
+    <header class="col-md-9">
+        <div class="row">
+            <div class="header-search col-md-3">
+                <i class="fas fa-search"></i>
+
+                <input type="search" name="header_search" id="headersearch" placeholder="بحث" />
+            </div>
+
+            <div class="col-md-7"></div>
+
+            <div class="col-md-2">
+                <div class="admin-photo"></div>
+                <div class="admin-login-settings">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="col-md-9 buttons">
+            <button data-toggle="modal" data-target="#addsupervisor">
+                اضافة مشرف
+            </button>
+        </div>
+
+    </section>
+
+    <section class="all-moadels">
+        <!-- Add Model -->
+        <div class="modal fade" id="addsupervisor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100">اضافة مشرف</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="supervisor_name_add">اسم المشرف</label>
+                            <input type="text" name="supervisor_name_add" class="form-control supervisor_name_add w-100"
+                                id="supervisor_name_add" required aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supervisor_power_add">الصلاحية</label>
+                            <select class="form-control supervisor_power_add" id="supervisor_power_add"
+                                name="supervisor_power_add" required>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="supervisor_password_add">كلمة السر</label>
+                            <input type="text" name="supervisor_password_add" required
+                                class="form-control w-100 supervisor_password_add" id="supervisor_password_add" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="ok-button text-center w-100" type="submit" data-dismiss="modal"
+                            aria-label="Close">
+                            اضافة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ----- -->
+
+        <!-- Delete Supervisor  -->
+
+        <div class="modal fade delete-modal" id="deletesupervisor" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100">حذف</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="w-100 text-center">هل تريد حذف المشرف بالفعل</h5>
+                        <p class="w-100 text-center">
+                            في حال حذف المشرف لا يمكن التراجع وسوف يتم فقد كل البيانات
+                            الخاصة بهذا المشرف
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="float-left w-100 confirm-delete" data-dismiss="modal" aria-label="Close">
+                            تأكيد
+                        </button>
+                        <button class="text-center w-100" data-dismiss="modal" aria-label="Close">
+                            تراجع
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------ -->
+
+        <!-- Edit Supervisor -->
+
+        <div class="modal fade" id="editsupervisor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center w-100">تعديل مشرف</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="supervisor_name_edit">اسم المشرف</label>
+                            <input type="text" name="supervisor_name_edit"
+                                class="form-control supervisor_name_edit w-100" id="supervisor_name_edit" required
+                                aria-describedby="emailHelp" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supervisor_power_edit">الصلاحية</label>
+                            <select class="form-control supervisor_power_edit" id="supervisor_power_edit"
+                                name="supervisor_power_edit" required>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="supervisor_password_edit">كلمة السر</label>
+                            <input type="text" name="supervisor_password_edit" required
+                                class="form-control w-100 supervisor_password_edit" id="supervisor_password_edit" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="edit_button text-center w-100" type="submit" data-dismiss="modal"
+                            aria-label="Close">
+                            تعديل
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------- -->
+
+    </section>
+
+    <article class="col-md-9">
+        <div class="layers">
+            <div class="table-container">
+                <h4>المشرفين</h4>
+
+                <table id="supervisormenutable" class="display the-table w-100">
+                    <thead>
+                        <tr>
+                            <th>اسم المشرف</th>
+                            <th>الصلاحية</th>
+                            <th>كلمة السر</th>
+                            <th>تعديل</th>
+                            <th>حذف</th>
+                            <th>id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class=""><span class="supervisor_name">حمدين Architect</span></td>
+                            <td><span class="supervisor_power">System Architect</span> </td>
+                            <td><span class="supervisor_password">System Architect</span></td>
+                            <td>
+                                <button data-toggle="modal" data-target="#editsupervisor" class="edit_button">
+                                    تعديل
+                                </button>
+                            </td>
+                            <td>
+                                <button class="delete-button" data-toggle="modal" data-target="#deletesupervisor">
+                                    حذف
+                                </button>
+                            </td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td class=""><span class="supervisor_name">حمدون Architect</span></td>
+                            <td><span class="supervisor_power">System Architect</span> </td>
+                            <td><span class="supervisor_password">System Architect</span></td>
+                            <td>
+                                <button data-toggle="modal" data-target="#editsupervisor" class="edit_button">
+                                    تعديل
+                                </button>
+                            </td>
+                            <td>
+                                <button class="delete-button" data-toggle="modal" data-target="#deletesupervisor">
+                                    حذف
+                                </button>
+                            </td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td class=""><span class="supervisor_name">حمادة Architect</span></td>
+                            <td><span class="supervisor_power">System Architect</span> </td>
+                            <td><span class="supervisor_password">System Architect</span></td>
+                            <td>
+                                <button data-toggle="modal" data-target="#editsupervisor" class="edit_button">
+                                    تعديل
+                                </button>
+                            </td>
+                            <td>
+                                <button class="delete-button" data-toggle="modal" data-target="#deletesupervisor">
+                                    حذف
+                                </button>
+                            </td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+
+    <script src="js/assets/axios.js"></script>
+    <script src="js/assets/all.min.js"></script>
+    <script src="js/assets/jquery.js" crossorigin="anonymous"></script>
+    <script src="js/assets/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/assets/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/assets/dataTables.js"></script>
+    <script src="js/assets/jquery.dataTables.min.js"></script>
+    <script src="js/assets/dataTables.buttons.min.js"></script>
+    <script src="js/assets/buttons.flash.min.js"></script>
+    <script src="js/assets/jszip.min.js"></script>
+    <script src="js/assets/pdfmake.min.js"></script>
+    <script src="js/assets/vfs_fonts.js"></script>
+    <script src="js/assets/buttons.html5.min.js"></script>
+    <script src="js/assets/buttons.print.min.js"></script>
+    <script src="js/assets/buttons.colVis.min.js"></script>
+    <script src="js/pages/Settings.js"></script>
+</body>
+
+</html>
